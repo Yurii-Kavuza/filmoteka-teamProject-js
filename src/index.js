@@ -1,25 +1,20 @@
-import axios from 'axios';
+import TrendingMovies from './js/trending-movies';
+import { headMarkup } from './js/markup';
 
-const BASE_URL = 'https://api.themoviedb.org/3/trending';
-const API_KEY = 'd984b4c758c2885930eb52b6130716de';
-const TIME_WINDOW = 'week';
-const MEDIA_TYPE = 'movie';
+const refs = {
+  gallery: document.querySelector('.gallery'),
+};
 
-export default class TrendingMovies {
-  constructor() {
-    this.results = [];
-    this.total_results = 0;
-    this.page = 1;
-  }
+const trendingMovies = new TrendingMovies();
+trendingMovies.getGenres();
+trendingMovies.getMovies().then(({ results, total_results, page }) => {
+  console.log(...results);
+  const markup = createMarkup(results);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+  const mup = headMarkup(results[0]);
+  console.log(mup);
+});
 
-  async getMovies() {
-    const query = `${BASE_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}`;
-
-    try {
-      const response = await axios.get(query);
-      return response.data;
-    } catch {
-      console.log(error);
-    }
-  }
+function createMarkup(cards) {
+  return cards.reduce((acc, card) => acc + headMarkup(card), '');
 }
