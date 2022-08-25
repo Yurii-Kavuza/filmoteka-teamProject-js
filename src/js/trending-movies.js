@@ -36,8 +36,4 @@ export default class TrendingMovies {
       console.log(error);
     }
   }
-
-  getImgUrl() {
-    return this.IMG_URL;
-  }
 }
