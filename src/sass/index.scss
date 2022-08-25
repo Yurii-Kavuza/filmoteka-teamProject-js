@@ -1,2 +1,11 @@
+@import './reset';
+@import './variables';
 @import './common';
-@import './example';
+@import './components/header';
+@import './components/gallery';
+@import './components/footer';
+@import './components/modal';
+@import './components/preloader';
+
+
+
