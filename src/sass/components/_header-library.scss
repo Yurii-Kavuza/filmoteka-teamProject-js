@@ -22,14 +22,12 @@
 
     @media screen and (min-width: 768px) {
         padding-right: 32px;
-        padding-left: 32px;
-        width: 768px;
+        padding-left: 32px;        
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-library-tablet.webp');
     }
 
-    @media screen and (min-width: 1280px) {
-        width: 1280px;
+    @media screen and (min-width: 1280px) {        
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-library-desktop.webp');
     }
