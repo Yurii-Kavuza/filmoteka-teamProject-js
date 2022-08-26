@@ -1,10 +1,19 @@
-.gallery {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+.listFilm {    
+    @media screen and (min-width: 768px) {
+            // width: 744px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }         
 }
 
-.gallery__item {    
-    width: 395px;
-    margin: 15px;
+.gallery__item { 
+    @media screen and (min-width: 768px) {
+            flex-basis: calc((100% - 32px) / 2);
+        }
+    
+        @media screen and (min-width: 1280px) {
+            flex-basis: calc((100% - 32px) / 3);
+        }
+    
 }
