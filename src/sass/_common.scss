@@ -21,23 +21,19 @@ body {
     margin-right: auto;
 
     @media screen and (min-width: 768px) {
-<<<<<<< HEAD
         // width: 744px;
-        display: flex;
+        display: flex
         flex-wrap: wrap;
-        flex-basis: 100%/2;
+        flex-basis: 100%/2;}
 
     @media screen and (min-width: 1280px) {
         // width: 1256px;
         display: flex;
         flex-wrap: wrap;
         flex-basis: 100%/3;
-=======
-        width: 744px;
     }
 
     @media screen and (min-width: 1280px) {
         width: 1256px;
->>>>>>> main
     }
 }
