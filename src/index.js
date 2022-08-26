@@ -2,17 +2,14 @@ import TrendingMovies from './js/trending-movies';
 import { headMarkup } from './js/markup';
 
 const refs = {
-  gallery: document.querySelector('.gallery'),
+  listFilm: document.querySelector('.listFilm'),
 };
 
 const trendingMovies = new TrendingMovies();
 trendingMovies.getGenres();
 trendingMovies.getMovies().then(({ results, total_results, page }) => {
-  console.log(...results);
   const markup = createMarkup(results);
-  refs.gallery.insertAdjacentHTML('beforeend', markup);
-  const mup = headMarkup(results[0]);
-  console.log(mup);
+  refs.listFilm.insertAdjacentHTML('beforeend', markup);
 });
 
 function createMarkup(cards) {

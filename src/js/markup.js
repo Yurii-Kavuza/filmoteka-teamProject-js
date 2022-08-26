@@ -3,20 +3,30 @@ import { IMG_URL } from './trending-movies';
 const headMarkup = item =>
   `<li>
   <div class="slot__thumb">
-            <img src="${IMG_URL}${item.poster_path}" alt="${item.title}" />
-          <h2>${item.title || item.original_title}</h2>
-          <p>Genre id = ${Object.values(item.genre_ids)}</p>
-          <p>${item.release_date.slice(0, 4)}</p>
+            <img src="${item.posterPath}"
+             alt="${item.title}"
+             data-id="${item.id}"
+             data-allGenres="${item.genresAllList}"
+             data-overwiew="${item.overview}"
+             data-backdrop="${item.backdropPath}"/>
+          <h2>${item.title}</h2>
+          <p>Genre id = ${item.genresShortList}</p>
+          <p>${item.releaseDate}</p>
 		  </div>
         </li>`;
 
 const watchedMarkup = item =>
   `<li>
   <div class="slot__thumb">
-            <img src="${IMG_URL}${item.poster_path}" alt="${item.title}" />
-          <h2>${item.title || item.original_title}</h2>
-          <p>Genre id = ${Object.values(item.genre_ids)}</p>
-          <p>${item.release_date.slice(0, 4)}</p>
+            <img src="${item.posterPath}"
+             alt="${item.title}"
+             data-id="${item.id}"
+             data-allGenres="${item.genresAllList}"
+             data-overwiew="${item.overview}"
+             data-backdrop="${item.backdropPath}"/>
+          <h2>${item.title}</h2>
+          <p>Genre id = ${item.genresShortList}</p>
+          <p>${item.releaseDate}</p>
           <p>${item.vote}</p>
 		  </div>
         </li>`;

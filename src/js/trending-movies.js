@@ -31,7 +31,25 @@ export default class TrendingMovies {
 
     try {
       const response = await axios.get(query);
-      return response.data;
+      const newResults = response.data.results.map(result => {
+        const newResult = {};
+        newResult.id = result.id;
+        newResult.genresShortList = '3 genres';
+        newResult.genresAllList = 'All genres';
+        newResult.title = result.original_title || result.title;
+        newResult.overview = result.overview;
+        newResult.posterPath = IMG_URL + result.poster_path;
+        newResult.backdropPath = IMG_URL + result.backdrop_path;
+        newResult.voteAverage = result.vote_average;
+        newResult.releaseDate = result.release_date.slice(0, 4);
+        return newResult;
+      });
+      const newData = {};
+      newData.total_results = response.data.total_results;
+      newData.page = response.data.page;
+      newData.pages = response.data.total_pages;
+      newData.results = newResults;
+      return newData;
     } catch {
       console.log(error);
     }
