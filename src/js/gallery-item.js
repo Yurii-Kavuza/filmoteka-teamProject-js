@@ -1,5 +1,3 @@
-import { IMG_URL } from './trending-movies';
-
 const headMarkup = item =>
   `<li class="gallery__item">
   <div class="slot__thumb">
