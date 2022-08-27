@@ -6,8 +6,9 @@ const refs = {
 };
 
 const trendingMovies = new TrendingMovies();
+const startPage = 1;
 trendingMovies.getGenres();
-trendingMovies.getMovies().then(({ results, total_results, page }) => {
+trendingMovies.getMovies(startPage).then(({ results, total_results, page }) => {
   const markup = createMarkup(results);
   refs.listFilm.insertAdjacentHTML('beforeend', markup);
 });
