@@ -10,7 +10,7 @@ const headMarkup = item =>
              data-overwiew="${item.overview}"
              data-backdrop="${item.backdropPath}"/>
           <h2>${item.title}</h2>
-          <p>Genre id = ${item.genresShortList}</p>
+          <p>${item.genresShortList}</p>
           <p>${item.releaseDate}</p>
 		  </div>
         </li>`;
