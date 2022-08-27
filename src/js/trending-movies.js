@@ -16,11 +16,13 @@ export default class TrendingMovies {
     this.page = 1;
   }
 
+  genres = this.getGenres();
+
   async getGenres() {
     try {
       const response = await axios.get(GENRES_URL);
       const genres = await response.data.genres;
-      localStorage.setItem('genres', JSON.stringify(genres));
+      return genres;
     } catch {
       console.log(error);
     }
@@ -31,6 +33,8 @@ export default class TrendingMovies {
 
     try {
       const response = await axios.get(query);
+      console.log(this.genres);
+
       const newResults = response.data.results.map(result => {
         const newResult = {};
         newResult.id = result.id;
