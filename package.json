@@ -1,5 +1,5 @@
 {
-  "name": "filmoteka-teamproject",
+  "name": "filmoteka-teamproject-js",
   "version": "2.0.0",
   "description": "**Read in other languages: [Русский](README.md), [Polski](README.pl.md).**",
   "homepage": "https://filatov44.github.io/filmoteka-teamProject-js/",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Filatov44/filmoteka-teamProject-js.git"
+    "url": "git+https://github.com/Filatov44/filmoteka-teamProject-js"
   },
   "keywords": [],
   "author": "Sergey Filatov <filatov300@gmail.com>",
@@ -21,8 +21,8 @@
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
-    "axios": "^0.27.2",
+    "@parcel/transformer-sass": "^2.6.0", 
+    "axios": "^0.27.2",   
     "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
