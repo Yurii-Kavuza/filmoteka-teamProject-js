@@ -5,4 +5,4 @@ function hidePreloader() {
   document.querySelector('.loader-overlay').classList.remove('is-open');
 }
 
-export {preloaderToggle, hidePreloader};
+export { preloaderToggle, hidePreloader };
