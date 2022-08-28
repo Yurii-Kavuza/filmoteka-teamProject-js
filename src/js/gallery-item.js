@@ -26,10 +26,11 @@ const watchedMarkup = item =>
           <h2 class="title__gallery">${item.title}</h2>
           <p class="other__gallery">${item.genresShortList.join(
             ', '
-          )}<span> | </span>${item.releaseDate} <svg id="icon-vote">${
-    item.vote_count
-  }</svg></p>
+          )}<span> | </span>${item.releaseDate}</p>
+          <button>${item.vote_count}</button>
+          
 		  </div>
         </li>`;
 
 export { headMarkup, watchedMarkup };
+//<svg id="icon-vote">${item.vote_count}</svg>
