@@ -27,8 +27,7 @@ const watchedMarkup = item =>
           <p class="other__gallery">${item.genresShortList.join(
             ', '
           )}<span> | </span>${item.releaseDate}</p>
-          <button>${item.vote_count}</button>
-          
+          <button class="btn-vote">${item.vote_count}</button>
 		  </div>
         </li>`;
 

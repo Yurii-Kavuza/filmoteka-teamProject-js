@@ -47,13 +47,12 @@
   color: var(--active-text-color);
 }
 
-#icon-vote {
+.btn-vote {
     width: 40px;
     height: 20px;
     background: var(--active-btn-color);
     border-radius: 5px;
-    
-font-family: 'Roboto';
+    font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
 font-size: 12px;
