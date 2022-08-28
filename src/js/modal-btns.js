@@ -1,16 +1,21 @@
 import { addStorage } from "./storage.js";
 
+
 const addQueueBtn = document.querySelector(".btnQueueModal");
-console.log(addQueueBtn);
-addQueueBtn.addEventListener('click', addToStorage);
-
-addStorage('watchQueue', array)
+addQueueBtn.addEventListener('click', () => addToStorage("watchedList", list));
+// addStorage('watchQueue', array);
 
 
-function addToStorage(listName, filmObject) {
-    console.log(listName);
+
+function addToStorage(listName, list) {
+    // console.log(listName, list);
     let array = [];
-    const filmId = { filmObject }
-    array = [...array, filmId]
+
+    // const filmId = { filmObject }
+    array = { ...array, list }
     addStorage(`${listName}`, array)
+    // console.log(addStorage);
 };
+
+let items = getStorage("watchedList");
+console.log(items);
