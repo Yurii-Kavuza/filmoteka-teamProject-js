@@ -6,7 +6,7 @@ const headMarkup = item =>
             <img src="${item.posterPath}"
              alt="${item.title}"
              data-id="${item.id}"
-             data-allGenres="${item.genresAllList}"
+             data-allGenres="${item.genresFullList}"
              data-overwiew="${item.overview}"
              data-backdrop="${item.backdropPath}"/>
           <h2>${item.title}</h2>
@@ -21,7 +21,7 @@ const watchedMarkup = item =>
             <img src="${item.posterPath}"
              alt="${item.title}"
              data-id="${item.id}"
-             data-allGenres="${item.genresAllList}"
+             data-allGenres="${item.genresFullList}"
              data-overwiew="${item.overview}"
              data-backdrop="${item.backdropPath}"/>
           <h2>${item.title}</h2>
