@@ -16,6 +16,8 @@ export default class TrendingMovies {
     this.page = 1;
   }
 
+  genres = this.getGenres();
+
   async getGenres() {
     try {
       const response = await axios.get(GENRES_URL);
@@ -26,17 +28,53 @@ export default class TrendingMovies {
     }
   }
 
-  async getMovies() {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}`;
+  getGenresFromLocalStorage() {
+    try {
+      const genresFromLocalStorage = localStorage.getItem('genres');
+      const genresAll = JSON.parse(genresFromLocalStorage);
+      return genresAll;
+    } catch (error) {
+      console.log(error.name);
+      console.log(error.message);
+    }
+  }
 
+  genresTextual(genresIds) {
+    const genresAll = this.getGenresFromLocalStorage();
+    const newGenres = genresIds.map(genreId => {
+      let newGenre = '';
+      for (const genre of genresAll) {
+        if (genre.id === genreId) {
+          newGenre = genre.name;
+          continue;
+        }
+      }
+      return newGenre;
+    });
+    return newGenres;
+  }
+
+  genresGetShortList(genres) {
+    let newGenres = [...genres];
+    if (genres.length > 3) {
+      newGenres = genres.slice(0, 2);
+      newGenres.push('...');
+    }
+    return newGenres;
+  }
+
+  async getMovies(pageNumber) {
+    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
     try {
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
         const newResult = {};
         newResult.id = result.id;
-        newResult.genresShortList = '3 genres';
-        newResult.genresAllList = 'All genres';
-        newResult.title = result.original_title || result.title;
+        newResult.genresFullList = this.genresTextual(result.genre_ids);
+        newResult.genresShortList = this.genresGetShortList(
+          newResult.genresFullList
+        );
+        newResult.title = result.title || result.original_title;
         newResult.overview = result.overview;
         newResult.posterPath = IMG_URL + result.poster_path;
         newResult.backdropPath = IMG_URL + result.backdrop_path;
@@ -49,6 +87,7 @@ export default class TrendingMovies {
       newData.page = response.data.page;
       newData.pages = response.data.total_pages;
       newData.results = newResults;
+      this.page = pageNumber;
       return newData;
     } catch {
       console.log(error);

@@ -65,3 +65,103 @@
 .footer-svg {
     margin: 0px 10px 0px 10px;
 }
+
+//POPUP(Modal)
+
+
+body.lock {
+    overflow: hidden;
+}
+
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    //scrol
+    overflow-y: auto;
+    overflow-x: hidden;
+    //animation
+    transition: all 0.8s ease 0s;
+}
+//псевдокласс target 
+// .popup:target {
+//     opacity: 1;
+//     visibility: visible;
+// }
+
+// используем JS
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+//animation
+.popup.open .popup__content {
+// .popup:target .popup__content {
+//    transform: translate(0px, 0px);
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+   opacity: 1;
+}
+// css ссылка для закрытия модалки при нажатии за окно
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup__content {
+    background-color: #fff;
+    color: black;
+    max-width: 800px;
+    padding: 20px;
+    position: relative;
+    //animation
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    //появляется сверху в низ
+    // transform: translate(0px, -100%);
+    //появляется с лево на право
+    // transform: translate(-100%, 0px);
+    // появляется снизу в вверх
+    // transform: translate(0px, 200%);
+    transform: perspective(600px) translate(0px, 200%) rotateX(45deg);
+
+}
+
+.popup__close {
+position: absolute;
+right: 10px;
+top: 10px;
+font-size: 20px;
+color: #000;
+text-decoration: none;
+
+}
+
+//Example content
+.popup__title {
+font-size: 20px;
+margin: 0px 0px 1em 0px;
+}
+
+.popup__text {
+
+}
