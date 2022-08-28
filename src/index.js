@@ -1,5 +1,5 @@
 import TrendingMovies from './js/trending-movies';
-import { headMarkup } from './js/markup';
+import { headMarkup } from './js/gallery-item';
 
 const refs = {
   listFilm: document.querySelector('.listFilm'),
