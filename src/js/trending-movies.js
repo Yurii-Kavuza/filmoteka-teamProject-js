@@ -58,7 +58,7 @@ export default class TrendingMovies {
     let newGenres = [...genres];
     if (genres.length > 3) {
       newGenres = genres.slice(0, 2);
-      newGenres.push('...');
+      newGenres.push('Other');
     }
     return newGenres;
   }
