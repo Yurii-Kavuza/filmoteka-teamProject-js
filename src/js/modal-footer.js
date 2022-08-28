@@ -96,4 +96,38 @@ function bodyUnLock() {
     }, timeout);
 }
 
-//37:00 добавить клик на esc
+// Add close modal push Escape
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        const popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
+    }
+})
+
+
+    // Добавляем полифилы для closest и matches
+
+//     (function () {
+//         //Проверяем
+//         if (!Element.prototype.closest) {
+//             //Реализуем
+//             Element.prototype.closest = function (css) {
+//                 var node = this;
+//                 while (node) {
+//                     if (node.matches(css)) return node;
+//                     else node = node.parentElement;
+//                 }
+//                 return null;
+//             }
+//         }
+//     })();
+
+// (function () {
+//     if (!Element.prototype.matches) {
+//         Element.prototype.matches = Element.prototype.matchesSelector ||
+//             Element.prototype.webkitMatchesSelector ||
+//             Element.prototype.mozMatchesSelector ||
+//             Element.prototype.msMatchesSelector;
+//     }
+// })();
