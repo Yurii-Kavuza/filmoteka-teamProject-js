@@ -58,23 +58,23 @@ export default class TrendingMovies {
     let newGenres = [...genres];
     if (genres.length > 3) {
       newGenres = genres.slice(0, 2);
-      newGenres.push('...');
+      newGenres.push('Other');
     }
     return newGenres;
   }
 
-  async getMovies() {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}`;
+  async getMovies(pageNumber) {
+    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
     try {
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
         const newResult = {};
         newResult.id = result.id;
-        newResult.genresAllList = this.genresTextual(result.genre_ids);
+        newResult.genresFullList = this.genresTextual(result.genre_ids);
         newResult.genresShortList = this.genresGetShortList(
-          newResult.genresAllList
+          newResult.genresFullList
         );
-        newResult.title = result.original_title || result.title;
+        newResult.title = result.title || result.original_title;
         newResult.overview = result.overview;
         newResult.posterPath = IMG_URL + result.poster_path;
         newResult.backdropPath = IMG_URL + result.backdrop_path;
@@ -87,6 +87,7 @@ export default class TrendingMovies {
       newData.page = response.data.page;
       newData.pages = response.data.total_pages;
       newData.results = newResults;
+      this.page = pageNumber;
       return newData;
     } catch {
       console.log(error);
