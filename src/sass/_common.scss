@@ -1,29 +1,36 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
 body {
-    font-family: Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .no-link {
-    text-decoration: none;
-    display: block;
+  text-decoration: none;
+  display: block;
 }
 
 .container {
-    width: 320px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  margin-left: auto;
+  margin-right: auto;
 
-    @media screen and (min-width: 768px) {
-        width: 744px;
-        }
 
-    @media screen and (min-width: 1280px) {
-        width: 1256px;
-    }}
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+   
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
+}
+
