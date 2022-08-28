@@ -1,6 +1,6 @@
 import TrendingMovies from './js/trending-movies';
 import { headMarkup } from './js/markup';
-import { preloaderToggle, hidePreloader } from './js/preloader';
+import './js/preloader';
 
 const refs = {
   listFilm: document.querySelector('.listFilm'),
