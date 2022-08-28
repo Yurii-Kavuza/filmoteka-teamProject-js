@@ -1,6 +1,8 @@
 .btn {
     background-color: transparent;
     cursor: pointer;
+    padding: 0;
+    border: 0;
 }
 
 .header__library {
@@ -15,19 +17,19 @@
     margin: 0 auto;
     min-width: 320px;
     margin: 0 auto;
-    
+
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url('/src/images/header/header-library-mobile.webp');
 
     @media screen and (min-width: 768px) {
         padding-right: 32px;
-        padding-left: 32px;        
+        padding-left: 32px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-library-tablet.webp');
     }
 
-    @media screen and (min-width: 1280px) {        
+    @media screen and (min-width: 1280px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-library-desktop.webp');
     }
@@ -48,7 +50,7 @@
 }
 
 .logo-text {
-    color: #ffffff;
+    color: var(--secondary-text-color);
 
     margin-left: 10px;
     font-size: 30px;
@@ -62,10 +64,25 @@
 
 .nav__list {
     display: flex;
-}
+    }
 
 .nav__item:last-child {
     margin-left: 39px;
+}
+
+.nav__item--current{
+    display: block;
+    transform: scale(1);
+}
+
+.nav__item--current::after{
+    content: '';
+  position: absolute;
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--error-color);
+  transform: scaleX(1);  
 }
 
 .library {
@@ -74,13 +91,20 @@
     margin-top: 50px;
 }
 
+.nav__btn,
 .library_btn {
-    color: #ffffff;
-    ;
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    line-height: calc(14 / 12);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.library_btn {
     padding-top: 14px;
     padding-bottom: 14px;
     width: 130px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--secondary-text-color);
     border-radius: 5px;
     transition: transform linear 250ms;
 
@@ -95,4 +119,11 @@
 
 .library_btn:last-child {
     margin-left: 20px;
+}
+
+.library__btn--current{
+    border: 0;
+    background-color: var(--active-btn-color);
+    border-radius: 5px;
+    
 }
