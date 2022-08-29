@@ -1,7 +1,14 @@
 .footer {
     background-color: var(--footer-background-color);
 }
-
+.footer-close {
+   
+    fill: #000;
+    &:hover,
+        &:focus {
+            fill: var(--active-btn-color);
+        }
+}
 .footer-block {
     display: flex;
     flex-direction: column;
@@ -130,7 +137,7 @@ body.lock {
 .popup__content {
     background-color: #fff;
     color: black;
-    max-width: 800px;
+    max-width: 1200px;
     padding: 20px;
     position: relative;
     //animation
@@ -146,6 +153,10 @@ body.lock {
 
 }
 
+.popup-border {
+    border-radius: 15px;
+}
+
 .popup__close {
 position: absolute;
 right: 10px;
@@ -153,6 +164,12 @@ top: 10px;
 font-size: 20px;
 color: #000;
 text-decoration: none;
+padding: 10px;
+// &:hover,
+//     &:focus {
+//         fill: var(--active-btn-color);
+//     }
+
 
 }
 
@@ -162,6 +179,6 @@ font-size: 20px;
 margin: 0px 0px 1em 0px;
 }
 
-.popup__text {
+// .popup__text {
 
-}
+// }
