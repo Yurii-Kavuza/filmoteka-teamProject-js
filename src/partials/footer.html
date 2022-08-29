@@ -1,15 +1,559 @@
-<footer>
-    <div class="footer">
+<footer id="footer">
+  <div class="footer">
     <div class="container">
       <div class="footer-block">
         <p class="footer-text">
           <span class="footer-police">© 2022 | All Rights Reserved | </span>
           Developed with
-          <svg class="footer-svg" width = "14" height = "13" ><use href="./images/symbol-defs.svg#icon-favorite"></use></svg>
+          <svg class="footer-svg" width="14" height="13">
+            <use href="./images/symbol-defs.svg#icon-favorite"></use>
+          </svg>
           by
-          <a href="#" class="footer-link"> GoIT Students</a>
+          <!-- popup in href-->
+          <a href="#popup" class="footer-link popup-link"> GoIT Students</a>
+          <!-- <a href="#popup2" class="footer-link popup-link"> 22222222222222</a> -->
         </p>
       </div>
     </div>
   </div>
+  <!-- popup(modal)-->
+  <div id="popup" class="popup">
+    <!-- <a href="#footer" class="popup__area"></a> -->
+    <div class="popup__body">
+      <div class="popup__content popup-border">
+        <a href="#footer" class="popup__close close-popup">
+          <svg class="footer-close" width="25" height="25">
+            <use href="./images/symbol-defs.svg#icon-close-mobmenu"></use>
+          </svg>
+        </a>
+        <!-- CONTENT-->
+        <div class="popup__title team-title">
+          <span class="team-group">Group</span
+          ><span class="team-number">11</span>
+        </div>
+
+        <div class="popup__text team">
+          <ul class="team__list">
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-1"></div>
+                    <h2 class="card-title">Sergey Filatov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Sergey Filatov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a
+                          href="https://github.com/Filatov44"
+                          target="_blank"
+                          class="team__social-link"
+                        >
+                          <svg class="team__social-icon" width="25" height="25">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a
+                          href="https://www.instagram.com/filatov_ser"
+                          target="_blank"
+                          class="team__social-link"
+                        >
+                          <svg class="team__social-icon" width="25" height="25">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a
+                          href="https://www.linkedin.com/in/sergey-filatov-402a44242"
+                          target="_blank"
+                          class="team__social-link"
+                        >
+                          <svg class="team__social-icon" width="25" height="25">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="team__people">
+              <div class="card">
+                <div class="card-container">
+                  <div class="card-front">
+                    <div class="card-photo dev-2"></div>
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend developer</p>
+                  </div>
+                  <div class="card-back">
+                    <h2 class="card-title">Ivan Ivanov</h2>
+                    <p class="card-text">Frontend dev</p>
+                    <ul class="social">
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-github1"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-instagram"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="social-item">
+                        <a href="" target="_blank" class="team__social-link">
+                          <svg class="team__social-icon" width="20" height="20">
+                            <use
+                              href="./images/symbol-defs.svg#icon-linkedin"
+                            ></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="team__people">
+              <img src="./images/footer/filatov_sergey.jpg" alt="Фото" />
+              <div class="team__description-card">
+                <h3 class="team__name">Сергей Филатов</h3>
+                <p class="team__position" lang="en">Front-End Developers</p>
+
+                <ul class="team__social-list list">
+                  <li class="team__social-item">
+                    <a href="" class="team__social-link">
+                      <svg class="team__social-icon" width="20" height="20">
+                        <use href="./images/symbol-defs.svg#icon-github1"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="team__social-item">
+                    <a href="" class="team__social-link">
+                      <svg class="team__social-icon" width="20" height="20">
+                        <use
+                          href="./images/symbol-defs.svg#icon-instagram"
+                        ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="team__social-item">
+                    <a href="" class="team__social-link">
+                      <svg class="team__social-icon" width="20" height="20">
+                        <use
+                          href="./images/symbol-defs.svg#icon-facebook"
+                        ></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="team__social-item">
+                    <a href="" class="team__social-link">
+                      <svg class="team__social-icon" width="20" height="20">
+                        <use
+                          href="./images/symbol-defs.svg#icon-linkedin"
+                        ></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="popup2" class="popup">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#footer" class="popup__close close-popup">X</a>
+        <div class="popup__title">Modal 2</div>
+        <div class="popup__text">
+          Это наполнение модалки. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus natus, atque fugit pariatur dicta est unde dolorum ipsum ullam impedit velit deleniti eius nemo, quibusdam a possimus repellendus odio? Id?
+        </div>
+      </div>
+    </div>
+  </div> -->
 </footer>

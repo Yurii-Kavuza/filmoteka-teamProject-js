@@ -1,22 +1,25 @@
 <header class="header__library">
-  <div class="header__container">
-    <nav class="nav">
-      <button class="logo btn">
-        <svg width="24" height="23">
-          <use href="./images/sprite.svg#icon-logo"></use>
-        </svg>
-        <span class="logo-text">Filmoteka</span>
-      </button>
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="./index.html">HOME</a>
-        </li>
-        <li class="nav__item"><a href="./my-library.html">MY LIBRARY</a></li>
-      </ul>
-    </nav>
-    <div class="library">
-      <button class="library_btn btn library_wached">WATCHED</button>
-      <button class="btn library_btn library_queue">QUEUE</button>
+    <div class="header__container container">
+        <nav class="nav">
+            <a class="logo btn" href="./index.html">
+                <svg width="24" height="23">
+                    <use href="./images/sprite.svg#icon-logo"></use>
+                </svg>
+                <span class="logo-text btn">Filmoteka</span>
+            </a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__btn btn" href="./index.html">Home</a>
+                </li>
+                <li class="nav__item nav__item--current">
+                    <a class="nav__btn btn" href="./my-library.html">My library</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="library">
+            <button class="library_btn btn js-btn-watched">Watched</button>
+            <button class="library_btn btn js-btn-queue">Queue</button>
+        </div>
     </div>
   </div>
 </header>
