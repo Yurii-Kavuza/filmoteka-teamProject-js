@@ -58,7 +58,7 @@ export default class TrendingMovies {
     let newGenres = [...genres];
     if (genres.length > 3) {
       newGenres = genres.slice(0, 2);
-      newGenres.push('...');
+      newGenres.push('Other');
     }
     return newGenres;
   }
@@ -89,6 +89,18 @@ export default class TrendingMovies {
       newData.results = newResults;
       this.page = pageNumber;
       return newData;
+    } catch {
+      console.log(error);
+    }
+  }
+
+  async getMoviesById(id) {
+    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
+    try {
+      const response = await axios.get(query);
+      const searchedMovie = response.data.results.find(
+        result => result.id === id
+      );
     } catch {
       console.log(error);
     }
