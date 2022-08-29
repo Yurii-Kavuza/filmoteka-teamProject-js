@@ -3,6 +3,7 @@
     cursor: pointer;
     padding: 0;
     border: 0;
+    text-decoration: none;
 }
 
 .header__library {
@@ -13,10 +14,9 @@
     background-size: cover;
     background-position: center;
     padding-right: 20px;
-    padding-left: 20px;
-    margin: 0 auto;
+    padding-left: 20px;  
     min-width: 320px;
-    margin: 0 auto;
+  
 
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -46,12 +46,12 @@
 }
 
 .logo {
-    border: 0;
+    border: 0;    
 }
 
 .logo-text {
     color: var(--secondary-text-color);
-
+    text-decoration: none;
     margin-left: 10px;
     font-size: 30px;
     line-height: calc(35 / 30);
@@ -67,7 +67,7 @@
     }
 
 .nav__item:last-child {
-    margin-left: 39px;
+    margin-left: 32px;
 }
 
 .nav__item--current{
