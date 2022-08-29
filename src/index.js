@@ -1,7 +1,8 @@
 import TrendingMovies from './js/trending-movies';
-import { headMarkup } from './js/markup';
+import { headMarkup } from './js/gallery-item';
 import { pagination } from './js/pagination';
 import './js/modal-footer';
+
 const refs = {
   listFilm: document.querySelector('.listFilm'),
 };
