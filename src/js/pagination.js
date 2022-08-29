@@ -1,8 +1,8 @@
 const ulTag = document.querySelector('.pagination-btn');
 /*  totalPage общее колличество страниц которые пришли с бекенда */
-let totalPage = 20;
+//let totalPage = 20;
 /* currentPage  текущая страница которая отображвутся на екране */
-let currentPage = 5;
+//let currentPage = 5;
 
 function pagination(totalPage, page) {
   let liTag = '';
@@ -66,10 +66,9 @@ function pagination(totalPage, page) {
         </li>`;
   }
   ulTag.innerHTML = liTag;
-  console.log(page);
 }
 /* вызов функции пагинации */
 /* console.log(currentPage);
 pagination(totalPage, currentPage);
  */
-pagination(totalPage, currentPage);
+export { pagination };
