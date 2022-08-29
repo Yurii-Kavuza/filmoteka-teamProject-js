@@ -50,8 +50,11 @@ color: rgb(0, 0, 0);
     left: 50%;
     transform: translate(-50%, 0%);
     perspective: 1000px;
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 230px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+        
 }
 
 .card-container {
@@ -61,7 +64,8 @@ color: rgb(0, 0, 0);
     transition: all 0.7s ease;
     position: absolute;
     box-shadow: 0px 0px 6px 2px #ffffff50;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 3px solid orange;
 }
 
 .card-front,
@@ -71,20 +75,21 @@ color: rgb(0, 0, 0);
     height: 100%;
     backface-visibility: hidden;
     // background-image:url(../images/footer/bg-footer-card.jpg);
-    background-image: -webkit-radial-gradient(ellipse, rgba(228, 141, 1, 0.315),black);
+   
+    background:#f7f7f7;
     
     // background: rgba(27, 22, 13, 0.419);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 17px;
 }
 
 .card-photo {
    
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -111,7 +116,7 @@ background-image: url('../images/footer/filatov_sergey.jpg');
 }
 
 .team__social-icon {
-    fill: aliceblue;
+    fill: black;
 
     &:hover,
     &:focus {
