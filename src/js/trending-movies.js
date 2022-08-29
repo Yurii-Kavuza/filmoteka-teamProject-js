@@ -85,7 +85,7 @@ export default class TrendingMovies {
       const newData = {};
       newData.total_results = response.data.total_results;
       newData.page = response.data.page;
-      newData.pages = response.data.total_pages;
+      newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = pageNumber;
       return newData;
@@ -116,7 +116,7 @@ export default class TrendingMovies {
       const newData = {};
       newData.total_results = response.data.total_results;
       newData.page = response.data.page;
-      newData.pages = response.data.total_pages;
+      newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = 1;
       return newData;
