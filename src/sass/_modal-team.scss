@@ -1,83 +1,3 @@
-.team {
-    background-color: #F5F4FA;
-
-   
-
-    &__list {
-        // margin-bottom: -30px;
-    }
-
-    &__people {
-        width: 200px;
-        margin-bottom: 20px;
-        background-color: #ffffff;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 4px 4px;
-    }
-
-    &__description-card {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: center;
-        &:last-child {
-                margin-bottom: 0;
-            }
-    }
-
-    &__name {
-        margin-bottom: 10px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.27;
-        letter-spacing: 0.03em;
-        color: var(--color-text-name);
-    }
-
-    &__position {
-        margin-bottom: 16px;
-        font-size: 16px;
-        line-height: 1.27;
-        letter-spacing: 0.03em;
-        color: var(--color-team-position);
-    }
-
-    &__social-list {
-        display: flex;
-        justify-content: center;
-    }
-
-    &__social-item {
-        margin-right: 10px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    &__social-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-        &:hover,
-        &:focus {
-            background-color: #2196F3;
-
-            .team__social-icon {
-                fill: #FFFFFF;
-            }
-        }
-    }
-
-    &__social-icon {
-        fill: var(--color-cocial-item);
-    }
-
-}
 
 @media screen and (min-width: 768px) {
     .team {
@@ -86,26 +6,119 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-           
+        //    margin: auto;
         }
 
-        &__people {
-           
-        }
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .team {
-        &__title {
-            font-size: 36px;
-            line-height: 1.17;
-            margin-bottom: 50px;
-        }
 
-        &__people {
-            
-        }
+
+.team-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--active-text-color);
+    
+}
+
+.team-group {
+margin-right: 15px;
+}
+
+
+.team__people {
+    position: relative;
+    // margin: auto;
+}
+
+.card-title {
+margin: 5px 0;
+}
+
+.card-text {
+margin: 10px 0;
+color: rgb(0, 0, 0);
+}
+
+.card {
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    perspective: 1000px;
+    width: 200px;
+    height: 250px;
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
+    position: absolute;
+    box-shadow: 0px 0px 6px 2px #ffffff50;
+    border-radius: 10px;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    // background-image:url(../images/footer/bg-footer-card.jpg);
+    background-image: -webkit-radial-gradient(ellipse, rgba(228, 141, 1, 0.315),black);
+    
+    // background: rgba(27, 22, 13, 0.419);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.card-photo {
+   
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-bottom: 10px
+}
+.dev-1 {
+background-image: url('../images/footer/filatov_sergey.jpg');
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px 0 0 0;
+    width: 130px;
+}
+
+.social a {
+    color: #ffffff;
+}
+
+.team__social-icon {
+    fill: aliceblue;
+
+    &:hover,
+    &:focus {
+        fill: var(--active-text-color);
     }
+}
 
+.card:hover .card-container {
+    transform: rotateY(180deg);
 }
