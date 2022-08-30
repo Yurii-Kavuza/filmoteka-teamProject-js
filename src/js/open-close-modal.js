@@ -5,13 +5,13 @@ const closeModalButton = document.querySelector('.close-button');
 const modalBackdrop = document.querySelector('.modal__backdrop');
 const gallery = document.querySelector('.listFilm');
 const modalCard = document.querySelector('.modal-card');
-const trendingMovies = new TrendingMovies();
+const trendingMovies2 = new TrendingMovies();
 
 console.log(closeModalButton);
 
-gallery.addEventListener('click', onModalOpen);
-closeModalButton.addEventListener('click', onModalClose);
-modalBackdrop.addEventListener('click', onBackdropClick);
+// gallery.addEventListener('click', onModalOpen);
+// closeModalButton.addEventListener('click', onModalClose);
+// modalBackdrop.addEventListener('click', onBackdropClick);
 
 function onModalOpen() {
   window.addEventListener('keydown', onEscKeyPress);
