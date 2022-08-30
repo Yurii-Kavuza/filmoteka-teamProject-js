@@ -19,7 +19,6 @@
         url('../images/header/header-library-mobile.webp');
 
     @media screen and (min-width: 768px) {
-        padding-top: 49px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-library-tablet.webp');
     }
@@ -121,7 +120,6 @@
     @media screen and (min-width: 1280px) {
         margin-left: 16px;
     }
-
 }
 
 .library__btn--current {
