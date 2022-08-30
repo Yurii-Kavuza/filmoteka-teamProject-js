@@ -24,7 +24,8 @@ function handlWatched(key) {
         console.log("error");
         // нужно добавить оповещение о пустом 
     } else {
-        //---- рендер разметки----
+        //---- рендер разметки-------------
+
         // console.log(newGalleryList);
         const array = newGalleryList.map(item => headMarkup(item));
 
@@ -34,9 +35,6 @@ function handlWatched(key) {
         galleryLibr.insertAdjacentHTML('beforeend', array);
         console.log('ответ для рендера', newGalleryList);
 
-
-
-        // createMarkup(newGalleryList);
     }
 };
 // ------------------------------------------------------------------
