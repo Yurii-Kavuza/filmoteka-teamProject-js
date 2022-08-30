@@ -126,7 +126,7 @@ export default class TrendingMovies {
   }
 
   async getMoviesById(id) {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
+    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${this.page}`;
     try {
       const response = await axios.get(query);
       const searchedMovie = response.data.results.find(
