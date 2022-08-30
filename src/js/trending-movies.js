@@ -144,4 +144,6 @@ export default class TrendingMovies {
   changePage(newPage) {
     this.page = newPage;
   }
+
 }
+
