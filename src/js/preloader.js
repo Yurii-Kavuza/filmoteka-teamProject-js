@@ -1,8 +1,8 @@
-function preloaderToggle() {
-  document.querySelector('.loader-overlay').classList.toggle('is-open');
+function preloaderShow() {
+  document.querySelector('.preloader-overlay').classList.add('is-open');
 }
 function hidePreloader() {
-  document.querySelector('.loader-overlay').classList.remove('is-open');
+  document.querySelector('.preloader-overlay').classList.remove('is-open');
 }
 
-export { preloaderToggle, hidePreloader };
+export { preloaderShow, hidePreloader };

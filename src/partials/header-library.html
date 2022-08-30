@@ -1,24 +1,25 @@
-<header class="header__library">
-    <div class="header__container">
+<header class="header__container--lib">
+    <div class="header__library container">
         <nav class="nav">
-            <button class="logo btn">
-                <svg width="24" height="23">
-                    <use href="./images/sprite.svg#icon-logo"></use>
+            <a class="logo btn" href="./index.html">
+                <svg class="logo-icon" width="24" height="23">
+                    <use href="./images/sprite.svg#icon-film"></use>
                 </svg>
-                <span class="logo-text">Filmoteka</span>
-            </button>
-            <ul class="nav__list">
+                <span class="logo-text btn">Filmoteka</span>
+            </a>
+            <ul class="navi__list">
                 <li class="nav__item">
-                    <a href="./index.html">HOME</a>
+                    <a class="nav__btn btn" href="./index.html">Home</a>
                 </li>
-                <li class="nav__item"> <a  href="./my-library.html">MY LIBRARY</a>
+                <li class="nav__item nav__item--current">
+                    <a class="nav__btn btn" href="./my-library.html">My library</a>
                 </li>
             </ul>
         </nav>
         <div class="library">
-            <button class="library_btn btn">WATCHED</button>
-            <button class="btn library_btn">QUEUE</button>
+            <button class="library_btn btn js-btn-watched">Watched</button>
+            <button class="library_btn btn js-btn-queue">Queue</button>
         </div>
-
     </div>
+  </div>
 </header>
