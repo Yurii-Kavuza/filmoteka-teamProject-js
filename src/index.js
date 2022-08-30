@@ -1,6 +1,7 @@
 import TrendingMovies from './js/trending-movies';
 import { headMarkup } from './js/markup';
 import './js/modal-footer';
+import './js/open-close-modal';
 const refs = {
   listFilm: document.querySelector('.listFilm'),
 };
