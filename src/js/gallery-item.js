@@ -2,7 +2,7 @@ import { IMG_URL } from './trending-movies';
 
 const headMarkup = item =>
   `<li class="gallery__item" id="${item.id}">
-  <div class="slot__thumb">
+  <a class="slot__thumb">
             <img class="img__gallery" src="${item.posterPath}"
              alt="${item.title}"
              data-id="${item.id}"
@@ -13,12 +13,12 @@ const headMarkup = item =>
           <p class="other__gallery">${item.genresShortList.join(
             ', '
           )}<span> | </span>${item.releaseDate}</p>
-		  </div>
+		  </a>
         </li>`;
 
 const watchedMarkup = item =>
   `<li class="gallery__item" id="${item.id}">
-  <div class="slot__thumb">
+  <a class="slot__thumb">
             <img class="img__gallery" src="${item.posterPath}"
              alt="${item.title}"
              data-id="${item.id}"
@@ -30,7 +30,7 @@ const watchedMarkup = item =>
             ', '
           )}<span> | </span>${item.releaseDate}</p>
           <button class="btn-vote">${item.vote_count}</button>
-		  </div>
+		  </a>
         </li>`;
 
 export { headMarkup, watchedMarkup };
