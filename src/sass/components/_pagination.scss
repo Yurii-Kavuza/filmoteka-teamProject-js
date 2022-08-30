@@ -1,0 +1,53 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*   min-height: 20vh; */
+  padding: 10px;
+}
+
+.pagination ul {
+  display: flex;
+  background: #fff;
+  padding: 8px;
+}
+
+.pagination ul li {
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination ul li.numb {
+  border-radius: 15%;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+}
+
+.pagination ul li.dots {
+  font-size: 22px;
+  cursor: default;
+}
+
+.pagination ul li.btn {
+  padding: 0 20px;
+}
+
+.pagination ul li.prev {
+  border-radius: 15%;
+}
+.pagination ul li.next {
+  border-radius: 15%;
+}
+
+.pagination ul li.active,
+.pagination ul li.numb:hover,
+.pagination ul li.btn:hover {
+  color: #fff;
+  background: #ff6b01;
+}
