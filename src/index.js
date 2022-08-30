@@ -3,6 +3,7 @@ import { headMarkup } from './js/gallery-item';
 import { pagination } from './js/pagination';
 import './js/local-storage';
 import './js/modal-footer';
+import './js/open-close-modal';
 //import './js/modal-btns'
 
 const refs = {
