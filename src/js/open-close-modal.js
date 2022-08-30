@@ -1,4 +1,4 @@
-import TrendingMovies from './js/trending-movies';
+import TrendingMovies from './trending-movies';
 
 // открытие-закрытие модалки
 const closeModalButton = document.querySelector('.close-button');
