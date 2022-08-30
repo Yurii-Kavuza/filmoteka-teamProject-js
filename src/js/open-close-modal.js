@@ -1,57 +1,50 @@
+import TrendingMovies from './js/trending-movies';
 
-import { getMoviesById } from './trending-movies';
-
-
-
-// открытие-закрытие модалки 
+// открытие-закрытие модалки
 const closeModalButton = document.querySelector('.close-button');
 const modalBackdrop = document.querySelector('.modal__backdrop');
 const gallery = document.querySelector('.listFilm');
 const modalCard = document.querySelector('.modal-card');
-console.log(closeModalButton)
+const trendingMovies = new TrendingMovies();
 
-
+console.log(closeModalButton);
 
 gallery.addEventListener('click', onModalOpen);
 closeModalButton.addEventListener('click', onModalClose);
 modalBackdrop.addEventListener('click', onBackdropClick);
 
 function onModalOpen() {
-    window.addEventListener("keydown", onEscKeyPress);
-    document.body.classList.add('show-modal');
+  window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('show-modal');
 }
 function onModalClose() {
-    window.removeEventListener("keydown", onEscKeyPress)
-    document.body.classList.remove('show-modal')
+  window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('show-modal');
 }
 function onBackdropClick(event) {
-    if (event.target === event.currentTarget) {
-        onModalClose()
-    }
+  if (event.target === event.currentTarget) {
+    onModalClose();
+  }
 }
 function onEscKeyPress(event) {
-    const ESC_KEY_CODE = 'Escape'
-    if (event.code === ESC_KEY_CODE) {
-        onModalClose()
-    }
+  const ESC_KEY_CODE = 'Escape';
+  if (event.code === ESC_KEY_CODE) {
+    onModalClose();
+  }
 }
-
-
 
 function clickOnMovie(e) {
-    if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
-        return;
-    }
-    let id = e.target.dataset.id;
+  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
+    return;
+  }
+  let id = e.target.dataset.id;
 
-    getMoviesById(id)
-        .then((res) => {
-            renderModalCard(res);
-        })
-
+  trendingMovies.getMoviesById(id).then(res => {
+    renderModalCard(res);
+  });
 }
 function createModalMarkup(item) {
-    return `
+  return `
       <div class="modal__backdrop  js-backdrop">
 
         <div class="modal__container">
@@ -99,12 +92,12 @@ function createModalMarkup(item) {
             </div>
         </div>
     </div>
- `
+ `;
 }
 
 function renderModalCard(res) {
-    const markup = createModalMarkup(res);
-    modalCard.innerHTML = markup;
-    modalCard.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+  const markup = createModalMarkup(res);
+  modalCard.innerHTML = markup;
+  modalCard.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
 }
