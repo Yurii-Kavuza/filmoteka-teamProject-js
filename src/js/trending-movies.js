@@ -85,7 +85,7 @@ export default class TrendingMovies {
       const newData = {};
       newData.total_results = response.data.total_results;
       newData.page = response.data.page;
-      newData.pages = response.data.total_pages;
+      newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = pageNumber;
       return newData;
@@ -116,7 +116,7 @@ export default class TrendingMovies {
       const newData = {};
       newData.total_results = response.data.total_results;
       newData.page = response.data.page;
-      newData.pages = response.data.total_pages;
+      newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = 1;
       return newData;
@@ -126,7 +126,7 @@ export default class TrendingMovies {
   }
 
   async getMoviesById(id) {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
+    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${this.page}`;
     try {
       const response = await axios.get(query);
       const searchedMovie = response.data.results.find(
@@ -144,4 +144,6 @@ export default class TrendingMovies {
   changePage(newPage) {
     this.page = newPage;
   }
+
 }
+
