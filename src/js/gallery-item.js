@@ -34,4 +34,3 @@ const watchedMarkup = item =>
         </li>`;
 
 export { headMarkup, watchedMarkup };
-//<svg id="icon-vote">${item.vote_count}</svg>
