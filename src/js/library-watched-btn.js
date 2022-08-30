@@ -1,30 +1,41 @@
-import { getStorage } from "./local-storage"
+import { getStorage } from "./local-storage";
+import { headMarkup, watchedMarkup } from './gallery-item';
+import { createMarkup } from '../index';
 
+const galleryLibr = document.querySelector(".listFilm");
+// -------------------------------------------------------------------
 const onLibraryWatchedBtn = document.querySelector(".library_watched");
-console.log(onLibraryWatchedBtn);
+onLibraryWatchedBtn.addEventListener('click', () => handlWatched("watchedList"));
 
-onLibraryWatchedBtn.addEventListener('click', () => handlWatched());
+// -------------------------------------------------------------------
+const onLibraryQueueBtn = document.querySelector(".library_queue");
+onLibraryQueueBtn.addEventListener('click', () => handlWatched("queueList"));
 
-
-// ------------------------------------------------------------------
-// const btnWatched = document.querySelector(".btnWatchedModal");
-// console.log(btnWatched);
-// btnWatched.addEventListener('click', () => handlWatched())
-
-function handlWatched() {
+// ===================================================================
+function handlWatched(key) {
     // let array = [];
-    const newGalleryList = getStorage("watchedList")
+    // let newGalleryList = getStorage("watchedList")
+    let newGalleryList = getStorage(key)
     // const filmId = { filmObject }
     // array = [...array, filmId]
-    console.log(newGalleryList);
+    // console.log(newGalleryList);
 
-    if (newGalleryList.length === 0) {
-        console.log(error);
-        // нужно добавить оповещение о пустом м
+    if (newGalleryList === undefined || newGalleryList.length === 0) {
+        console.log("error");
+        // нужно добавить оповещение о пустом 
     } else {
-        // watchedMarkup()
-        // renderImgs(newGalleryList.list);
-        // ренедерити
+        //---- рендер разметки-------------
+
+        // console.log(newGalleryList);
+        const array = newGalleryList.map(item => headMarkup(item));
+
+        // headMarkup({...newGalleryList});
+        // debugger
+        galleryLibr.innerHTML = "";
+        galleryLibr.insertAdjacentHTML('beforeend', array);
+        console.log('ответ для рендера', newGalleryList);
+
     }
 };
 // ------------------------------------------------------------------
+
