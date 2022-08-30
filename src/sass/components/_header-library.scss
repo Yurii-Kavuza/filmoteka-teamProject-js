@@ -9,13 +9,11 @@
 .header__container--lib {
 
     min-height: 216px;
-    padding-top: 44px;
+    padding-top: 40px;
     margin: 0 auto;
     background-size: cover;
     background-position: center;
     min-width: 320px;
-
-
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url('../images/header/header-library-mobile.webp');
@@ -56,7 +54,6 @@
     @media screen and (max-width: 768px) {
         display: none;
     }
-
 }
 
 .navi__list {
@@ -125,12 +122,10 @@
         margin-left: 16px;
     }
 
-
 }
 
 .library__btn--current {
     border: 0;
     background-color: var(--active-btn-color);
     border-radius: 5px;
-
 }

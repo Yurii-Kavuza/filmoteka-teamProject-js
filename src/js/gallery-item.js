@@ -1,7 +1,7 @@
 import { IMG_URL } from './trending-movies';
 
 const headMarkup = item =>
-  `<li class="gallery__item">
+  `<li class="gallery__item" id="${item.id}">
   <div class="slot__thumb">
             <img class="img__gallery" src="${item.posterPath}"
              alt="${item.title}"
@@ -17,7 +17,7 @@ const headMarkup = item =>
         </li>`;
 
 const watchedMarkup = item =>
-  `<li class="gallery__item">
+  `<li class="gallery__item" id="${item.id}">
   <div class="slot__thumb">
             <img class="img__gallery" src="${item.posterPath}"
              alt="${item.title}"
