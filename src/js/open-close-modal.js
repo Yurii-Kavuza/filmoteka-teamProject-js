@@ -65,7 +65,7 @@ function createModalMarkup(item) {
   }">
             </div>
             <div class=" film_description">
-                    <h2 class="film__title">"${item.title}"</h2>
+                    <h2 class="film__title">${item.title}</h2>
 
                     <div class="grid-container">
                         <table>
@@ -89,15 +89,15 @@ function createModalMarkup(item) {
                             </tr>
                             <tr>
                                 <td class="film__info">Genre</td>
-                                <td class="film__value">"${item.genres
+                                <td class="film__value">${item.genres
                                   .map(genre => genre.name)
-                                  .join(', ')}"</td>
+                                  .join(', ')}</td>
                             </tr>
                         </table>
                     </div>
 
                     <h3 class="film__about">About</h3>
-                    <p class="film__overview">"${item.overview}"</p>
+                    <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
                         <button type="button" class="film__button btn__watch">Add to watched</button>
