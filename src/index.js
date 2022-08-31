@@ -5,6 +5,8 @@ import { pagination } from './js/pagination';
 import './js/local-storage';
 import './js/modal-footer';
 import './js/open-close-modal';
+import './js/search';
+// import './js/scrolling'
 //import './js/modal-btns'
 
 const refs = {
