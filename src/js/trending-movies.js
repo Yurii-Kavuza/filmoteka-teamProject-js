@@ -6,7 +6,7 @@ const TRENDING_URL = 'https://api.themoviedb.org/3/trending';
 const GENRES_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 const TIME_WINDOW = 'week';
 const MEDIA_TYPE = 'movie';
-export const IMG_URL = 'https://image.tmdb.org/t/p/original';
+export const IMG_URL = 'https://image.tmdb.org/t/p';
 //https://www.themoviedb.org/talk/5f3ef4eec175b200365ee352?language=uk-UA
 
 export default class TrendingMovies {
@@ -42,10 +42,11 @@ export default class TrendingMovies {
   genresTextual(genresIds) {
     const genresAll = this.getGenresFromLocalStorage();
     const newGenres = genresIds.map(genreId => {
-      let newGenre = '';
+      let newGenre = {};
       for (const genre of genresAll) {
         if (genre.id === genreId) {
-          newGenre = genre.name;
+          newGenre.name = genre.name;
+          newGenre.id = genre.id;
           continue;
         }
       }
@@ -68,18 +69,11 @@ export default class TrendingMovies {
     try {
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
-        const newResult = {};
-        newResult.id = result.id;
-        newResult.genresFullList = this.genresTextual(result.genre_ids);
-        newResult.genresShortList = this.genresGetShortList(
-          newResult.genresFullList
-        );
-        newResult.title = result.title || result.original_title;
-        newResult.overview = result.overview;
-        newResult.posterPath = IMG_URL + result.poster_path;
-        newResult.backdropPath = IMG_URL + result.backdrop_path;
-        newResult.voteAverage = result.vote_average;
-        newResult.releaseDate = result.release_date.slice(0, 4);
+        let newResult = {};
+        for (let key in result) {
+          newResult[key] = result[key];
+          newResult.genres = this.genresTextual(result.genre_ids);
+        }
         return newResult;
       });
       const newData = {};
@@ -88,6 +82,7 @@ export default class TrendingMovies {
       newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = pageNumber;
+      console.log(newData);
       return newData;
     } catch {
       console.log(error);
@@ -99,18 +94,11 @@ export default class TrendingMovies {
     try {
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
-        const newResult = {};
-        newResult.id = result.id;
-        newResult.genresFullList = this.genresTextual(result.genre_ids);
-        newResult.genresShortList = this.genresGetShortList(
-          newResult.genresFullList
-        );
-        newResult.title = result.title || result.original_title;
-        newResult.overview = result.overview;
-        newResult.posterPath = IMG_URL + result.poster_path;
-        newResult.backdropPath = IMG_URL + result.backdrop_path;
-        newResult.voteAverage = result.vote_average;
-        newResult.releaseDate = result.release_date.slice(0, 4);
+        let newResult = {};
+        for (let key in result) {
+          newResult[key] = result[key];
+          newResult.genres = this.genresTextual(result.genre_ids);
+        }
         return newResult;
       });
       const newData = {};
@@ -126,12 +114,12 @@ export default class TrendingMovies {
   }
 
   async getMoviesById(id) {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${this.page}`;
+    const query = `
+https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
     try {
       const response = await axios.get(query);
-      const searchedMovie = response.data.results.find(
-        result => result.id === id
-      );
+      //const searchedMovie = response.data.results.find(result => result.id === id
+      return response.data;
     } catch {
       console.log(error);
     }
@@ -144,6 +132,4 @@ export default class TrendingMovies {
   changePage(newPage) {
     this.page = newPage;
   }
-
 }
-

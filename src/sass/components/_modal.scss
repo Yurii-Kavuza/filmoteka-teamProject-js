@@ -1,7 +1,9 @@
 // .modal-card {
 
 // }
-
+// body {
+//     overflow: visible;
+// }
 
 body.show-modal .modal__backdrop {
     opacity: 1;
@@ -95,9 +97,7 @@ body.show-modal .modal__backdrop {
         grid-template-columns: 400px auto;
     }
 
-    display: grid;
-    grid-column-gap: 30px;
-    grid-template-columns: 400px auto;
+
 }
 
 .film__poster {
@@ -154,6 +154,15 @@ body.show-modal .modal__backdrop {
     font-size: 12px;
     line-height: 1.33;
     color: #8c8c8c;
+    padding-right: 20px;
+
+    @media screen and (min-width: 768px) {
+        padding-right: 35px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-right: 70px;
+    }
 }
 
 .film__vote {
@@ -161,4 +170,89 @@ body.show-modal .modal__backdrop {
     width: 36px;
     height: 16px;
     background-color: #f7f7f7;
+    border-radius: 5px;
+
+    text-align: center;
+    line-height: 1.17;
+
+    &--orange {
+        background-color: #ff6b08;
+        border: 1px solid #ff6b08;
+        color: #f7f7f7;
+    }
+}
+
+.film__original {
+    text-transform: uppercase;
+}
+
+.film__about {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.film__overview {
+    display: block;
+    line-height: 1.67;
+    margin-bottom: 20px;
+}
+
+.modal__buttons {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: 1024px) {
+        justify-content: flex-start;
+    }
+}
+
+.film__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    width: 112px;
+    height: 44px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    text-transform: uppercase;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    transition: all 250ms linear;
+
+    &:hover,
+    &:focus {
+        background-color: #ff6b08;
+        border: 1px solid #ff6b08;
+        color: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 125px;
+        height: 44px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 136px;
+        height: 44px;
+    }
 }
