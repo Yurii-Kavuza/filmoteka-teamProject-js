@@ -1,73 +1,79 @@
 .listFilm {
-    margin-top: 20px;
-    margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 
-    @media screen and (min-width: 768px) {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 }
-   
 
-.gallery__item { 
-    @media screen and (min-width: 768px) {
+.gallery__item {
+  margin-bottom: 20px;
+  transition: 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 32px) / 2);
-}
+    margin-bottom: 32px;
+    margin-right: 32px;
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
+  }
 
-    @media screen and (min-width: 1280px) {
-        flex-basis: calc((100% - 32px) / 3);
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100% - 32px) / 3);
+    margin-bottom: 32px;
+    margin-right: 16px;
+    &:nth-child(2n) {
+      margin-right: 16px;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0px;
+    }
+  }
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
     }
 }
 
 .slot__thumb {
-    display: block;
-    margin-bottom: 20px;
-
-    @media screen and (min-width: 768px) {
-        margin-bottom: 32px;
-        margin-right: 32px;
-        & :nth-child(2n) {
-                margin-right: 0px;
-            }
-    }
-    
-    @media screen and (min-width: 1280px) {
-        margin-bottom: 32px;
-        margin-right: 16px;
-        & :nth-child(3n) {
-            margin-right: 0px;
-            }
-    }
+  display: block;
 }
 
-.title__gallery, .other__gallery {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: left;
+.title__gallery,
+.other__gallery {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
 
-@media screen and (min-width: 1280px){
-font-weight: 500;
+  @media screen and (min-width: 1280px) {
+    font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-}}
+  }
+}
 
-.title__gallery{
-    padding-top: 10px;
-    color: var(--primary-text-color);
+.title__gallery {
+  padding-top: 10px;
+  color: var(--primary-text-color);
 
-    @media screen and (min-width: 768px) {
-        padding-top: 8px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-top: 8px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        padding-top: 12px;
-    }
+  @media screen and (min-width: 1280px) {
+    padding-top: 12px;
+  }
 }
 
 .other__gallery {
@@ -75,18 +81,19 @@ font-weight: 500;
 }
 
 .img__gallery {
-    width: 280;
-    height: 440;
-    border-radius: 5px;
+  width: 280;
+  height: 440;
+  border-radius: 5px;
 
-    @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 336px;
-    height: 455px;}
+    height: 455px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 394px;
-        height: 574px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 394px;
+    height: 574px;
+  }
 }
 
 .btn-vote {
@@ -95,13 +102,15 @@ font-weight: 500;
     background: var(--active-btn-color);
     border: solid;
     border-radius: 5px;
+    border-color: var(--active-btn-color);
 
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
 
     color: var(--secondary-text-color);
