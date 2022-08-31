@@ -7,6 +7,8 @@ import 'tui-pagination/dist/tui-pagination.min.css';
 import './js/local-storage';
 import './js/modal-footer';
 import './js/open-close-modal';
+import './js/search';
+import './js/scrolling';
 //import './js/modal-btns'
 
 const paganation = new Pagination('#tui-pagination-container', {
@@ -48,6 +50,7 @@ const trendMovi = event => {
       refs.listFilm.innerHTML = '';
       refs.listFilm.insertAdjacentHTML('beforeend', markup);
       hidePreloader();
+      window.scrollTo(0, 200);
     });
 };
 paganation.on('afterMove', trendMovi);
