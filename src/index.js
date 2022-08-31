@@ -8,6 +8,7 @@ import './js/local-storage';
 import './js/modal-footer';
 import './js/open-close-modal';
 //import './js/modal-btns'
+import './js/scrolling'
 
 const paganation = new Pagination('#tui-pagination-container', {
   totalItems: 0,
