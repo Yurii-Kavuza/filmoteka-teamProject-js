@@ -14,18 +14,20 @@ const getGenresShortList = genres => {
 const headMarkup = item => {
   const genresFullList = getGenreFullList(item.genres);
   const genresShortList = getGenresShortList(genresFullList);
+  const imageOriginal = `${IMG_URL}/original${item.poster_path}`;
   const markup = `<li class="gallery__item" id="${item.id}">
   <a class="slot__thumb">
-            <img class="img__gallery" src="${item.posterPath}"
+            <img class="img__gallery" src="${imageOriginal}"
              alt="${item.title}"
              data-id="${item.id}"
-             data-allGenres="${item.genresAllList}"
+             data-allGenres="${genresFullList}"
              data-overwiew="${item.overview}"
-             data-backdrop="${item.backdropPath}"/>
+             data-backdrop="${item.backdrop_path}"/>
           <h2 class="title__gallery">${item.title.toUpperCase()}</h2>
-          <p class="other__gallery">${genresShortList}<span> | </span>${
-    item.releaseDate
-  }</p>
+          <p class="other__gallery">${genresShortList}<span> | </span>${item.release_date.slice(
+    0,
+    4
+  )}</p>
 		  </a>
         </li>`;
   return markup;
@@ -34,18 +36,19 @@ const headMarkup = item => {
 const watchedMarkup = item => {
   const genresFullList = getGenreFullList(item.genres);
   const genresShortList = getGenresShortList(genresFullList);
+  const imageOriginal = `${IMG_URL}/original/${item.poster_path}`;
   const markup = `<li class="gallery__item" id="${item.id}">
   <a class="slot__thumb">
-            <img class="img__gallery" src="${item.posterPath}"
+            <img class="img__gallery" src="${imageOriginal}"
              alt="${item.title}"
              data-id="${item.id}"
-             data-allGenres="${item.genresAllList}"
+             data-allGenres="${genresFullList}"
              data-overwiew="${item.overview}"
              data-backdrop="${item.backdropPath}"/>
           <h2 class="title__gallery">${item.title}</h2>
           <p class="other__gallery">${item.genres
             .map(genre => genre.name)
-            .join(', ')}}<span> | </span>${item.releaseDate}</p>
+            .join(', ')}}<span> | </span>${item.release_date.slice(0, 4)}</p>
           <button class="btn-vote">${item.vote_count}</button>
 		  </a>
         </li>`;
