@@ -18,48 +18,48 @@ gallery.addEventListener('click', clickOnMovie);
 //   document.body.classList.add('show-modal');
 // }
 function onModalClose() {
-  window.removeEventListener('keydown', onEscKeyPress);
-  document.body.classList.remove('show-modal');
-  document.body.style.overflow = 'auto';
-  // document.body.classList.remove('lock');
+    window.removeEventListener('keydown', onEscKeyPress);
+    document.body.classList.remove('show-modal');
+    document.body.style.overflow = 'auto';
+    // document.body.classList.remove('lock');
 }
 function onBackdropClick(event) {
-  if (event.target === event.currentTarget) {
-    onModalClose();
-  }
+    if (event.target === event.currentTarget) {
+        onModalClose();
+    }
 }
 function onEscKeyPress(event) {
-  const ESC_KEY_CODE = 'Escape';
-  if (event.code === ESC_KEY_CODE) {
-    onModalClose();
-  }
+    const ESC_KEY_CODE = 'Escape';
+    if (event.code === ESC_KEY_CODE) {
+        onModalClose();
+    }
 }
 
 function clickOnMovie(e) {
-  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
-    return;
-  }
-  let id = e.target.dataset.id;
+    if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
+        return;
+    }
+    let id = e.target.dataset.id;
 
-  trendingMovies2.getMoviesById(id).then(res => {
-    renderModalCard(res);
-    const closeModalButton = document.querySelector('.close-button');
-    window.addEventListener('keydown', onEscKeyPress);
-    closeModalButton.addEventListener('click', onModalClose);
-    const modalBackdrop = document.querySelector('.modal__backdrop');
-    modalBackdrop.addEventListener('click', onBackdropClick);
-    document.body.classList.add('show-modal');
-    // btn---------------------------------------------------
-    const addQueueBtn = document.querySelector(".btnQueueModal");
-    const addWatchedBtn = document.querySelector(".btnWatchedModal");
-    addQueueBtn.addEventListener('click', () => addToStorage("queueList", res));
-    addWatchedBtn.addEventListener('click', () => addToStorage("watchedList", res));
-  });
+    trendingMovies2.getMoviesById(id).then(res => {
+        renderModalCard(res);
+        const closeModalButton = document.querySelector('.close-button');
+        window.addEventListener('keydown', onEscKeyPress);
+        closeModalButton.addEventListener('click', onModalClose);
+        const modalBackdrop = document.querySelector('.modal__backdrop');
+        modalBackdrop.addEventListener('click', onBackdropClick);
+        document.body.classList.add('show-modal');
+        // btn---------------------------------------------------
+        const addQueueBtn = document.querySelector(".btnQueueModal");
+        const addWatchedBtn = document.querySelector(".btnWatchedModal");
+        addQueueBtn.addEventListener('click', () => addToStorage("queueList", res));
+        addWatchedBtn.addEventListener('click', () => addToStorage("watchedList", res));
+    });
 }
 function createModalMarkup(item) {
-  console.log(item);
-  console.log(`${IMG_URL}/original/${item.poster_path}`);
-  return `
+    console.log(item);
+    console.log(`${IMG_URL}/original/${item.poster_path}`);
+    return `
       <div class="modal__backdrop  js-backdrop">
 
         <div class="modal__container">
@@ -70,7 +70,7 @@ function createModalMarkup(item) {
                 <div class="film__poster">
                     <img class="film__image"
                         src="${IMG_URL}/original/${item.poster_path}" alt="${item.title
-    }">
+        }">
             </div>
             <div class=" film_description">
                     <h2 class="film__title">${item.title}</h2>
@@ -79,26 +79,30 @@ function createModalMarkup(item) {
                         <table>
                             <tr>
                                 <td class="film__info">Vote / Votes</td>
-                                <td class="film__vote">${item.vote_average.toFixed(
-      1
-    )}/${item.vote_count}</td>
+                                <td class="film__value">
+                                <span class="film__vote film__vote--orange">${item.vote_average.toFixed(
+            1
+        )}</span>
+        <span>/</span>
+        <span film__vote film__vote--orange>${item.vote_count}</span>
+        </td>
                             </tr>
                             <tr>
                                 <td class="film__info">Popularity</td>
                                 <td class="film__value">${item.popularity.toFixed(
-      1
-    )}</td>
+            1
+        )}</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Original Title</td>
                                 <td class="film__original">${item.original_title
-    }</td>
+        }</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Genre</td>
                                 <td class="film__value">${item.genres
-      .map(genre => genre.name)
-      .join(', ')}</td>
+            .map(genre => genre.name)
+            .join(', ')}</td>
                             </tr>
                         </table>
                     </div>
@@ -119,8 +123,8 @@ function createModalMarkup(item) {
 }
 
 function renderModalCard(res) {
-  const markup = createModalMarkup(res);
-  modalCard.innerHTML = markup;
-  modalCard.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+    const markup = createModalMarkup(res);
+    modalCard.innerHTML = markup;
+    modalCard.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
 }
