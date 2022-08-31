@@ -9,6 +9,7 @@ const MEDIA_TYPE = 'movie';
 export const IMG_URL = 'https://image.tmdb.org/t/p';
 //https://www.themoviedb.org/talk/5f3ef4eec175b200365ee352?language=uk-UA//
 
+
 export default class TrendingMovies {
   constructor() {
     this.results = [];
