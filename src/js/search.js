@@ -4,11 +4,14 @@ import API_KEY from './api-key';
 import { preloaderShow, hidePreloader } from './preloader';
 // import headMarkup from './gallery-item';
 // import searchMovies from './trending-movies';
+// import axios from 'axios';
+// const axios = require('axios');
 
-const submitForm = document.querySelector('.search-form');
-const inputArea = document.querySelector('.search-form__input');
+const form = document.querySelector('.search-form');
+const input = document.querySelector('.search-form__input');
+const gallery = document.querySelector('.container');
 
-submitForm.addEventListener('submit', search);
+form.addEventListener('submit', onSubmit);
 
 // 1. получить данные от функции ниже
 // 2. сделать проверку полученых результатов
