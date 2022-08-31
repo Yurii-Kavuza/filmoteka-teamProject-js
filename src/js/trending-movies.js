@@ -42,10 +42,11 @@ export default class TrendingMovies {
   genresTextual(genresIds) {
     const genresAll = this.getGenresFromLocalStorage();
     const newGenres = genresIds.map(genreId => {
-      let newGenre = '';
+      let newGenre = {};
       for (const genre of genresAll) {
         if (genre.id === genreId) {
-          newGenre = genre.name;
+          newGenre.name = genre.name;
+          newGenre.id = genre.id;
           continue;
         }
       }
@@ -67,13 +68,11 @@ export default class TrendingMovies {
     const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${pageNumber}`;
     try {
       const response = await axios.get(query);
+      console.log(response.data.results);
       const newResults = response.data.results.map(result => {
         const newResult = {};
         newResult.id = result.id;
-        newResult.genresFullList = this.genresTextual(result.genre_ids);
-        newResult.genresShortList = this.genresGetShortList(
-          newResult.genresFullList
-        );
+        newResult.genres = this.genresTextual(result.genre_ids);
         newResult.title = result.title || result.original_title;
         newResult.overview = result.overview;
         newResult.posterPath = IMG_URL + result.poster_path;
