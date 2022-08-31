@@ -48,6 +48,7 @@ const trendMovi = event => {
       refs.listFilm.innerHTML = '';
       refs.listFilm.insertAdjacentHTML('beforeend', markup);
       hidePreloader();
+      window.scrollTo(0, 200);
     });
 };
 paganation.on('afterMove', trendMovi);
