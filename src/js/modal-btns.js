@@ -1,9 +1,10 @@
 import { addStorage, getStorage } from "./local-storage";
 import SearchFilm from './trending-movies';
 
-const addQueueBtn = document.querySelector(".btnQueueModal");
-const addWatchedBtn = document.querySelector(".btnWatchedModal");
-
+// const addQueueBtn = document.querySelector(".btnQueueModal");
+// const addWatchedBtn = document.querySelector(".btnWatchedModal");
+// addQueueBtn.addEventListener('click', () => addToStorage("queueList", item));
+// addWatchedBtn.addEventListener('click', () => addToStorage("watchedList", item));
 // 1) надо добавить классы на кнопки модалки,
 // 2) проверить получение item с модалки
 
@@ -33,15 +34,17 @@ const addWatchedBtn = document.querySelector(".btnWatchedModal");
 
 // addQueueBtn.addEventListener('click', () => addToStorage("watchedList", listTog));
 // ----------------------------------------------------------------------------------
-addQueueBtn.addEventListener('click', () => addToStorage("queueList", item));
-addWatchedBtn.addEventListener('click', () => addToStorage("watchedList", item));
+// addQueueBtn.addEventListener('click', () => addToStorage("queueList", item));
+// addWatchedBtn.addEventListener('click', () => addToStorage("watchedList", item));
 
 
-function addToStorage(listName, film) {
+export function addToStorage(listName, film) {
     // let items = [];
-    let items = getStorage(listName);
-    // console.log(items);
+    // console.log('1', film);
+    let items = getStorage(listName) !== undefined ? getStorage(listName) : [];
 
+    // console.log(items);
+    // console.log(listName);
     if (items.find(item => item.id === film.id)) {
         let array = items.filter(item => item.id !== film.id)
 
