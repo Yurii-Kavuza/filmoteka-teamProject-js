@@ -93,6 +93,7 @@ font-weight: 500;
     width: 36px;
     height: 16px;
     background: var(--active-btn-color);
+    border: solid;
     border-radius: 5px;
 
     font-style: normal;
@@ -111,3 +112,7 @@ font-weight: 500;
     }
 }
 
+.alt__img {
+  display: flex;
+  flex-wrap: wrap;
+}
