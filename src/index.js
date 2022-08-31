@@ -6,7 +6,7 @@ import './js/local-storage';
 import './js/modal-footer';
 import './js/open-close-modal';
 import './js/search';
-// import './js/scrolling'
+import './js/scrolling';
 //import './js/modal-btns'
 
 const refs = {
@@ -29,5 +29,6 @@ trendingMovies
 function createMarkup(cards) {
   return cards.reduce((acc, card) => acc + headMarkup(card), '');
 }
+// backToTop();
 /* примитивный вызов для наглядности рендеринка, позже изменить */
 /* pagination(totalPage, currentPage); */

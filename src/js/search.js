@@ -1,6 +1,6 @@
-import { Notify } from 'notiflix';
+// import { Notify } from 'notiflix';
 import API_KEY from './api-key';
-// import pagination from './pagination';
+import pagination from './pagination';
 import { preloaderShow, hidePreloader } from './preloader';
 // import headMarkup from './gallery-item';
 import searchMovies from './trending-movies';
@@ -51,6 +51,8 @@ async function onSubmit(event) {
       width: 200,
       showOnlyTheLastOne: true,
     });
+    // pagination;
+
     input.value = '';
     hidePreloader();
   } catch (error) {
