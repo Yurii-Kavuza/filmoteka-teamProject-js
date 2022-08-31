@@ -1,6 +1,6 @@
 import { getStorage } from "./local-storage";
 import { headMarkup, watchedMarkup } from './gallery-item';
-import { createMarkup } from '../index';
+// import { createMarkup } from '../index';
 
 const galleryLibr = document.querySelector(".listFilm");
 // -------------------------------------------------------------------
@@ -21,13 +21,13 @@ function handlWatched(key) {
     // console.log(newGalleryList);
 
     if (newGalleryList === undefined || newGalleryList.length === 0) {
-        console.log("error");
+        console.log("error: нічого не добавлено ");
         // нужно добавить оповещение о пустом 
     } else {
         //---- рендер разметки-------------
 
         // console.log(newGalleryList);
-        const array = newGalleryList.map(item => headMarkup(item));
+        const array = newGalleryList.map(item => { console.log(item); headMarkup({ ...item }) });
 
         // headMarkup({...newGalleryList});
         // debugger

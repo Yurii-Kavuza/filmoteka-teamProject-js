@@ -99,10 +99,21 @@ function bodyUnLock() {
 // Add close modal push Escape
 
 document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape') {  
         const popupActive = document.querySelector('.popup.open');
-        popupClose(popupActive);
-    }
+
+         // Проверка
+        if (popupActive) {
+            popupClose(popupActive);
+            // const isExist = Array.from(
+            //   popupActive?.classList).includes('open');
+        }
+        // const isExist = popupActive?.classList.includes('open');
+            // popupClose(popupActive);
+        // console.log(Array.from(popupActive?.classList));
+        // console.log(isExist);
+        
+      }
 })
 
 

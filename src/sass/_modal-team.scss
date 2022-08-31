@@ -39,6 +39,15 @@ margin-right: 15px;
 margin: 5px 0;
 }
 
+.footer-title-name {
+    text-align: center;
+    margin: 0;
+}
+
+.card-text.footer-text-p {
+    margin: 5px 0 ;
+}
+
 .card-text {
 margin: 10px 0;
 color: rgb(0, 0, 0);
@@ -98,6 +107,43 @@ color: rgb(0, 0, 0);
 .dev-1 {
 background-image: url('../images/footer/filatov_sergey.jpg');
 }
+
+.dev-2 {
+    background-image: url('../images/footer/natalia_siladi_2.jpg');
+}
+
+.dev-3 {
+    background-image: url('../images/footer/yurii_kavuza_.jpg');
+}
+
+.dev-4 {
+    background-image: url('../images/footer/alina_domnich_2.jpg');
+}
+
+.dev-5 {
+    background-image: url('../images/footer/roma_romanenko_.jpg');
+}
+
+.dev-6 {
+    background-image: url('../images/footer/tatiana-sah_2.jpg');
+}
+
+.dev-7 {
+    background-image: url('../images/footer/oleg_mishko_2.jpg');
+}
+
+.dev-8 {
+    background-image: url('../images/footer/vadym_matkovskyy_.jpg');
+}
+
+.dev-9 {
+    background-image: url('../images/footer/ihor_melnyk_.jpg');
+}
+
+.dev-10 {
+    background-image: url('../images/footer/serhii-polishchuk_.jpg');
+}
+
 .card-back {
     transform: rotateY(180deg);
 }
