@@ -48,7 +48,7 @@ const watchedMarkup = item => {
           <h2 class="title__gallery">${item.title}</h2>
           <p class="other__gallery">${item.genres
             .map(genre => genre.name)
-            .join(', ')}}<span> | </span>${item.release_date.slice(0, 4)}</p>
+            .join(', ')}<span> | </span>${item.release_date.slice(0, 4)}</p>
           <button class="btn-vote">${item.vote_count}</button>
 		  </a>
         </li>`;
