@@ -1,4 +1,5 @@
 import TrendingMovies from './js/trending-movies';
+import { preloaderShow, hidePreloader } from './js/preloader';
 import { headMarkup } from './js/gallery-item';
 import { pagination } from './js/pagination';
 import './js/local-storage';
@@ -10,6 +11,7 @@ const refs = {
   listFilm: document.querySelector('.listFilm'),
 };
 
+preloaderShow();
 const trendingMovies = new TrendingMovies();
 const startPage = 1;
 trendingMovies.getGenres();
@@ -19,6 +21,7 @@ trendingMovies
     const markup = createMarkup(results);
     pagination(total_pages, page);
     refs.listFilm.insertAdjacentHTML('beforeend', markup);
+    hidePreloader();
   });
 
 function createMarkup(cards) {

@@ -126,12 +126,12 @@ export default class TrendingMovies {
   }
 
   async getMoviesById(id) {
-    const query = `${TRENDING_URL}/${MEDIA_TYPE}/${TIME_WINDOW}?api_key=${API_KEY}&page=${this.page}`;
+    const query = `
+https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
     try {
       const response = await axios.get(query);
-      const searchedMovie = response.data.results.find(
-        result => result.id === id
-      );
+      //const searchedMovie = response.data.results.find(result => result.id === id
+      return response.data;
     } catch {
       console.log(error);
     }
@@ -144,6 +144,4 @@ export default class TrendingMovies {
   changePage(newPage) {
     this.page = newPage;
   }
-
 }
-
