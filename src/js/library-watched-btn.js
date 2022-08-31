@@ -5,6 +5,7 @@ import { headMarkup, watchedMarkup } from './gallery-item';
 const galleryLibr = document.querySelector('.listFilm');
 // -------------------------------------------------------------------
 const onLibraryWatchedBtn = document.querySelector('.library_watched');
+const listFilm = document.querySelector('.listFilm');
 onLibraryWatchedBtn.addEventListener('click', () =>
   handlWatched('watchedList')
 );
@@ -39,7 +40,13 @@ function handlWatched(key) {
     galleryLibr.innerHTML = '';
     galleryLibr.insertAdjacentHTML('beforeend', array);
     console.log('ответ для рендера', newGalleryList);
-    watchedMarkup(newGalleryList);
+    const markup = createMarkup(newGalleryList, watchedMarkup);
+    listFilm.innerHTML = '';
+    listFilm.insertAdjacentHTML('beforeend', markup);
   }
+}
+
+function createMarkup(cards, markupFunc) {
+  return cards.reduce((acc, card) => acc + markupFunc(card), '');
 }
 // ------------------------------------------------------------------
