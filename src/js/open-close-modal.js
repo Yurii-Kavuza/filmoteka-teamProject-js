@@ -18,6 +18,8 @@ gallery.addEventListener('click', clickOnMovie);
 function onModalClose() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-modal');
+  document.body.style.overflow = 'auto';
+  // document.body.classList.remove('lock');
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
