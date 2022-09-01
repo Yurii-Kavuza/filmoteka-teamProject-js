@@ -24,12 +24,6 @@ const headMarkup = item => {
   const markup = `<li class="gallery__item" id="${item.id}">
   <a class="slot__thumb">
   ${returnImageMarkup(item, 'img__gallery')}
-            <img class="img__gallery" src="${imageOriginal}"
-             alt="${item.title}"
-             data-id="${item.id}"
-             data-allGenres="${genresFullList}"
-             data-overwiew="${item.overview}"
-             data-backdrop="${item.backdrop_path}"/>
           <h2 class="title__gallery">${item.title.toUpperCase()}</h2>
           <p class="other__gallery">${genresShortList}<span> | </span>${item.release_date.slice(
     0,
@@ -46,13 +40,7 @@ const watchedMarkup = item => {
   const imageOriginal = `${IMG_URL}/original/${item.poster_path}`;
   const markup = `<li class="gallery__item" id="${item.id}">
   <a class="slot__thumb">
-  ${returnImageMarkup(item, 'img__gallery')}          
-  <img class="img__gallery" src="${imageOriginal}"
-             alt="${item.title}"
-             data-id="${item.id}"
-             data-allGenres="${genresFullList}"
-             data-overwiew="${item.overview}"
-             data-backdrop="${item.backdropPath}"/>
+  ${returnImageMarkup(item, 'img__gallery')}
           <h2 class="title__gallery">${item.title}</h2>
           <div class="alt__img">
          <p class="other__gallery">${item.genres
@@ -96,11 +84,12 @@ function returnImageMarkup(item, classImg) {
                     src="${IMG_URL}/original${item.poster_path}" loading="lazy"
                     alt="${item.original_title}"
                     class=${classImg}
+                    data-id="${item.id}"
                     
                 />
                 </picture>`;
   } else {
-    imageMarkup = `<img class=${classImg} loading="lazy" alt="${item.original_title}" src="${DEFAULT_IMG_PATH}"/>`;
+    imageMarkup = `<img class=${classImg} loading="lazy" alt="${item.original_title}" src="${DEFAULT_IMG_PATH}" data-id="${item.id}"/>`;
   }
   return imageMarkup;
 }

@@ -36,10 +36,7 @@ function onEscKeyPress(event) {
 }
 
 function clickOnMovie(e) {
-  if (
-    e.target.nodeName === 'UL'
-    // e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2'
-  ) {
+  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
     return;
   }
   let id = e.target.dataset.id;
