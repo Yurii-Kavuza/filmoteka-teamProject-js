@@ -5,5 +5,7 @@ import './js/modal-footer';
 import './js/modal-btns';
 import './js/scrolling';
 import { handlWatched } from './js/library-watched-btn';
+import './js/open-close-modal';
+
 currentWatchedPage();
 handlWatched('watchedList');
