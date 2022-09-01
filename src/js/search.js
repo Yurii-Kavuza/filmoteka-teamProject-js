@@ -11,7 +11,7 @@ function onSubmit(evt) {
     return;
   }
   showPreloader();
-  const startPage = trendingMovies.getPage();
+  const startPage = trendingMovies.getSearchPage();
   trendingMovies
     .searchMovies(input, startPage)
     .then(({ results, total_results }) => {
