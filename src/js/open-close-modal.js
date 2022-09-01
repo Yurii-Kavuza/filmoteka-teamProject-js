@@ -52,15 +52,18 @@ function clickOnMovie(e) {
     // btn---------------------------------------------------
     const addQueueBtn = document.querySelector('.btnQueueModal');
     const addWatchedBtn = document.querySelector('.btnWatchedModal');
-    addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
+    // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
     addWatchedBtn.addEventListener('click', () =>
       addToStorage('watchedList', res)
     );
-    //   addQueueBtn.addEventListener('click', e => {
-    //     addToStorage('queueList', res);
-    //     console.log(e.target.textContent);
-    //     e.target.textContent = `${renderListButton('queueList', id)}queue`;
-    //   });
+    addQueueBtn.addEventListener('click', e => {
+      addToStorage('queueList', res);
+      console.log(e.target.textContent);
+      console.log(e.target.dataset.id);
+      console.log(getStorage('queueList'));
+      console.log(isInStorage('queueList', id));
+      e.target.textContent = `${renderListButton('queueList', id)}queue`;
+    });
   });
 }
 function renderListButton(listName, id) {
@@ -72,10 +75,9 @@ function renderListButton(listName, id) {
 }
 
 function createModalMarkup(item) {
-  console.log(item);
-  console.log(`${IMG_URL}/original/${item.poster_path}`);
+  console.log(isInStorage('queueList', item.id));
   return `
-      <div class="modal__backdrop  js-backdrop">
+      <div class="js-backdrop">
 
         <div class="modal__container">
 
@@ -95,8 +97,8 @@ function createModalMarkup(item) {
                                 <td class="film__info">Vote / Votes</td>
                                 <td class="film__value">
                                 <span class="film__vote film__vote--orange">${item.vote_average.toFixed(
-                                  1
-                                )}</span>
+    1
+  )}</span>
         <span>/</span>
         <span film__vote film__vote--orange>${item.vote_count}</span>
         </td>
@@ -104,20 +106,19 @@ function createModalMarkup(item) {
                             <tr>
                                 <td class="film__info">Popularity</td>
                                 <td class="film__value">${item.popularity.toFixed(
-                                  1
-                                )}</td>
+    1
+  )}</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Original Title</td>
-                                <td class="film__original">${
-                                  item.original_title
-                                }</td>
+                                <td class="film__original">${item.original_title
+    }</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Genre</td>
                                 <td class="film__value">${item.genres
-                                  .map(genre => genre.name)
-                                  .join(', ')}</td>
+      .map(genre => genre.name)
+      .join(', ')}</td>
                             </tr>
                         </table>
                     </div>
@@ -126,14 +127,18 @@ function createModalMarkup(item) {
                     <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
-                        <button type="button" class="film__button btn__watch btnWatchedModal">${renderListButton(
-                          'watchedList',
-                          item
-                        )}watched</button>
-                        <button type="button" class="film__button btn__queue btnQueueModal">${renderListButton(
-                          'queueList',
-                          item
-                        )}queue</button>
+                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${
+                          item.id
+                        }" data-list="watchedList">${renderListButton(
+    'watchedList',
+    item.id
+  )}watched</button>
+                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${
+                          item.id
+                        }" data-list="queueList">${renderListButton(
+    'queueList',
+    item.id
+  )}queue</button>
                     </div>
 
                 </div>
