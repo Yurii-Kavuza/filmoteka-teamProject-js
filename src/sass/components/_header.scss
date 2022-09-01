@@ -67,6 +67,7 @@
 }
 
 .searching-form {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-top: 57px;
@@ -80,6 +81,7 @@
 }
 
 .search-form {
+  
   min-width: 280px;
   border: none;
   border-bottom: 0.5px solid #ffffff;
@@ -144,4 +146,27 @@
   width: 100%;
   background-color: var(--error-color);
   transform: scaleX(1);
+}
+
+.header__error {
+  position: absolute;
+  max-width: 75%;
+  margin-top: -75px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.8;
+  color: var(--error-color);
+
+  @media screen and (min-width: 768px) {
+      max-width: 100%;
+      margin-top: -60px;
+      margin-left: 135px;      
+  }
+
+  @media screen and (min-width: 1280px) {
+      margin-top: -60px;
+      margin-left: 397px;
+      letter-spacing: 0.55;
+  }
 }
