@@ -1,6 +1,6 @@
 import TrendingMovies from './trending-movies';
 import { returnImageMarkup } from './gallery-item';
-import { addStorage, getStorage } from './local-storage';
+import { addStorage, getStorage, isInStorage } from './local-storage';
 import { addToStorage } from './modal-btns';
 // открытие-закрытие модалки
 const IMG_URL = 'https://image.tmdb.org/t/p';
@@ -58,6 +58,14 @@ function clickOnMovie(e) {
     );
   });
 }
+function renderListButton(listName, id) {
+  if (isInStorage(listName, id)) {
+    return 'Remove from ';
+  } else {
+    return 'Add to ';
+  }
+}
+
 function createModalMarkup(item) {
   console.log(item);
   console.log(`${IMG_URL}/original/${item.poster_path}`);
@@ -113,8 +121,14 @@ function createModalMarkup(item) {
                     <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
-                        <button type="button" class="film__button btn__watch btnWatchedModal">Add to watched</button>
-                        <button type="button" class="film__button btn__queue btnQueueModal">Add to queue</button>
+                        <button type="button" class="film__button btn__watch btnWatchedModal">${renderListButton(
+                          'watchedList',
+                          item
+                        )}watched</button>
+                        <button type="button" class="film__button btn__queue btnQueueModal">${renderListButton(
+                          'queueList',
+                          item
+                        )}queue</button>
                     </div>
 
                 </div>
