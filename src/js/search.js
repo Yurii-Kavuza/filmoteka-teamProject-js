@@ -17,6 +17,7 @@ function onSubmit(evt) {
     .then(({ results, total_results }) => {
       if (results.length === 0) {
         refs.errorMes.classList.remove("visually-hidden");
+        refs.form.reset();
         hidePreloader();   
         return};
      if(!refs.errorMes.classList.contains("visually-hidden")){
