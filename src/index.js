@@ -15,6 +15,7 @@ import { refs } from './js/refs';
 import { onSubmit } from './js/search';
 
 //import './js/modal-btns'
+import './js/scrolling'
 
 showPreloader();
 
