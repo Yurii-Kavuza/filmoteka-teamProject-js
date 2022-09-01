@@ -1,19 +1,21 @@
 import axios from 'axios';
 import { API_KEY } from './api-key';
 
-const BASE_URL = 'https://api.themoviedb.org/3/';
+const BASE_URL = 'https://api.themoviedb.org/3';
 const TRENDING_URL = 'https://api.themoviedb.org/3/trending';
 const GENRES_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 const TIME_WINDOW = 'week';
 const MEDIA_TYPE = 'movie';
 export const IMG_URL = 'https://image.tmdb.org/t/p';
-//https://www.themoviedb.org/talk/5f3ef4eec175b200365ee352?language=uk-UA
+//https://www.themoviedb.org/talk/5f3ef4eec175b200365ee352?language=uk-UA//
+
 
 export default class TrendingMovies {
   constructor() {
     this.results = [];
     this.total_results = 0;
     this.page = 1;
+    this.search = '';
   }
 
   genres = this.getGenres();
@@ -89,9 +91,12 @@ export default class TrendingMovies {
     }
   }
 
-  async searchMovies(searchedText) {
-    const query = `BASE_URL/search/${MEDIA_TYPE}?api_key=${API_KEY}&language=en-US&page=1&query=${searchedText}`;
+  async searchMovies(searchedText, pageNumber) {
+    const query = `${BASE_URL}/search/${MEDIA_TYPE}?api_key=${API_KEY}&language=en-US&page=${pageNumber}&query=${searchedText}`;
+    console.log(query);
+    this.search = searchedText;
     try {
+      console.log(query);
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
         let newResult = {};
@@ -131,5 +136,9 @@ https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
 
   changePage(newPage) {
     this.page = newPage;
+  }
+
+  getSearch() {
+    return this.search;
   }
 }
