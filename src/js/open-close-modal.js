@@ -52,15 +52,18 @@ function clickOnMovie(e) {
     // btn---------------------------------------------------
     const addQueueBtn = document.querySelector('.btnQueueModal');
     const addWatchedBtn = document.querySelector('.btnWatchedModal');
-    addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
+    // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
     addWatchedBtn.addEventListener('click', () =>
       addToStorage('watchedList', res)
     );
-    //   addQueueBtn.addEventListener('click', e => {
-    //     addToStorage('queueList', res);
-    //     console.log(e.target.textContent);
-    //     e.target.textContent = `${renderListButton('queueList', id)}queue`;
-    //   });
+    addQueueBtn.addEventListener('click', e => {
+      addToStorage('queueList', res);
+      console.log(e.target.textContent);
+      console.log(e.target.dataset.id);
+      console.log(getStorage('queueList'));
+      console.log(isInStorage('queueList', id));
+      e.target.textContent = `${renderListButton('queueList', id)}queue`;
+    });
   });
 }
 function renderListButton(listName, id) {
@@ -72,8 +75,7 @@ function renderListButton(listName, id) {
 }
 
 function createModalMarkup(item) {
-  console.log(item);
-  console.log(`${IMG_URL}/original/${item.poster_path}`);
+  console.log(isInStorage('queueList', item.id));
   return `
       <div class="js-backdrop">
 
@@ -125,14 +127,18 @@ function createModalMarkup(item) {
                     <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
-                        <button type="button" class="film__button btn__watch btnWatchedModal">${renderListButton(
-        'watchedList',
-        item
-      )}watched</button>
-                        <button type="button" class="film__button btn__queue btnQueueModal">${renderListButton(
-        'queueList',
-        item
-      )}queue</button>
+                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${
+                          item.id
+                        }" data-list="watchedList">${renderListButton(
+    'watchedList',
+    item.id
+  )}watched</button>
+                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${
+                          item.id
+                        }" data-list="queueList">${renderListButton(
+    'queueList',
+    item.id
+  )}queue</button>
                     </div>
 
                 </div>

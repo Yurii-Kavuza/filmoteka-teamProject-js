@@ -29,9 +29,9 @@ export function removeStorage(key) {
   }
 }
 
-export function isInStorage(listName, film) {
+export function isInStorage(listName, id) {
   let items = getStorage(listName) !== undefined ? getStorage(listName) : [];
-  if (items.find(item => item.id === film.id)) {
+  if (items.find(item => item.id === id)) {
     return true;
   } else {
     return false;
