@@ -11,6 +11,10 @@ const getGenresShortList = genres => {
   return newGenres;
 };
 
+function createIndexMarkup(cards) {
+  return cards.reduce((acc, card) => acc + headMarkup(card), '');
+}
+
 const headMarkup = item => {
   const genresFullList = getGenreFullList(item.genres);
   const genresShortList = getGenresShortList(genresFullList);
@@ -55,4 +59,4 @@ const watchedMarkup = item => {
   return markup;
 };
 
-export { headMarkup, watchedMarkup };
+export { headMarkup, watchedMarkup, createIndexMarkup };
