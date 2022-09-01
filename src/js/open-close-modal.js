@@ -53,20 +53,49 @@ function clickOnMovie(e) {
     const addQueueBtn = document.querySelector('.btnQueueModal');
     const addWatchedBtn = document.querySelector('.btnWatchedModal');
     // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
-    addWatchedBtn.addEventListener('click', () =>
+    addWatchedBtn.addEventListener('click', e => {
+      handlWatch();
       addToStorage('watchedList', res)
+    }
     );
     addQueueBtn.addEventListener('click', e => {
+      handlQueue();
       addToStorage('queueList', res);
-      console.log(e.target.textContent);
-      console.log(e.target.dataset.id);
-      console.log(getStorage('queueList'));
-      console.log(isInStorage('queueList', id));
-      e.target.textContent = `${renderListButton('queueList', id)}queue`;
-    });
+
+      // console.log(e.target.textContent);
+      // console.log(e.target.dataset.id);
+      // console.log(getStorage('queueList'));
+      // console.log(isInStorage('queueList', id));
+
+      // e.target.textContent = `${renderListButton('queueList', id)}queue`;
+      // console.log(`${renderListButton('queueList', id)}queue`);
+    }
+
+    );
+    // ------------------------handlBtnS--------------------------
+
+    function handlQueue() {
+      if (addQueueBtn.textContent === "Add to queue") {
+        addQueueBtn.textContent = "Remove from queue";
+      } else {
+        addQueueBtn.textContent = "Add to queue";
+      }
+    }
+    function handlWatch() {
+      if (addWatchedBtn.textContent === "Add to watched") {
+        addWatchedBtn.textContent = "Remove from watched";
+      } else {
+        addWatchedBtn.textContent = "Add to watched";
+      }
+    }
+    // ==============================================================
+
   });
 }
+
+
 function renderListButton(listName, id) {
+
   if (isInStorage(listName, id)) {
     return 'Remove from ';
   } else {
@@ -75,7 +104,7 @@ function renderListButton(listName, id) {
 }
 
 function createModalMarkup(item) {
-  console.log(isInStorage('queueList', item.id));
+  // console.log(isInStorage('queueList', item.id));
   return `
       <div class="js-backdrop">
 
@@ -127,18 +156,16 @@ function createModalMarkup(item) {
                     <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
-                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${
-                          item.id
-                        }" data-list="watchedList">${renderListButton(
-    'watchedList',
-    item.id
-  )}watched</button>
-                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${
-                          item.id
-                        }" data-list="queueList">${renderListButton(
-    'queueList',
-    item.id
-  )}queue</button>
+                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${item.id
+    }" data-list="watchedList">${renderListButton(
+      'watchedList',
+      item.id
+    )}watched</button>
+                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${item.id
+    }" data-list="queueList">${renderListButton(
+      'queueList',
+      item.id
+    )}queue</button>
                     </div>
 
                 </div>
