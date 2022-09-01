@@ -56,6 +56,11 @@ function clickOnMovie(e) {
     addWatchedBtn.addEventListener('click', () =>
       addToStorage('watchedList', res)
     );
+    //   addQueueBtn.addEventListener('click', e => {
+    //     addToStorage('queueList', res);
+    //     console.log(e.target.textContent);
+    //     e.target.textContent = `${renderListButton('queueList', id)}queue`;
+    //   });
   });
 }
 function renderListButton(listName, id) {
