@@ -15,7 +15,7 @@ import { refs } from './js/refs';
 import { onSubmit } from './js/search';
 
 //import './js/modal-btns'
-import './js/scrolling'
+import './js/scrolling';
 
 showPreloader();
 
@@ -23,15 +23,5 @@ startTrendMovies();
 
 refs.form.addEventListener('submit', onSubmit);
 
-const trendMovi = event => {
-  trendingMovies
-    .getMovies(event.page)
-    .then(({ results, total_results, total_pages, page }) => {
-      const markup = createMarkup(results);
-      refs.listFilm.innerHTML = '';
-      refs.listFilm.insertAdjacentHTML('beforeend', markup);
-      hidePreloader();
-     window.scrollTo(0, 200);
-    });
-};
-paganation.on('afterMove', trendMovi);
+pagination.on('afterMove', trendMovi);
+paginationSearch.on('afterMove', searchMovie);
