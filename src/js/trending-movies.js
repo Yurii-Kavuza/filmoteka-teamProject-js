@@ -84,7 +84,6 @@ export default class TrendingMovies {
       newData.total_pages = response.data.total_pages;
       newData.results = newResults;
       this.page = pageNumber;
-      console.log(newData);
       return newData;
     } catch {
       console.log(error);
@@ -93,10 +92,8 @@ export default class TrendingMovies {
 
   async searchMovies(searchedText, pageNumber) {
     const query = `${BASE_URL}/search/${MEDIA_TYPE}?api_key=${API_KEY}&language=en-US&page=${pageNumber}&query=${searchedText}`;
-    console.log(query);
     this.search = searchedText;
     try {
-      console.log(query);
       const response = await axios.get(query);
       const newResults = response.data.results.map(result => {
         let newResult = {};
