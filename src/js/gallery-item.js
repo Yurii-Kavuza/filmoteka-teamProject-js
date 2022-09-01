@@ -50,10 +50,12 @@ const watchedMarkup = item => {
              data-overwiew="${item.overview}"
              data-backdrop="${item.backdropPath}"/>
           <h2 class="title__gallery">${item.title}</h2>
-          <p class="other__gallery">${item.genres
-            .map(genre => genre.name)
-            .join(', ')}}<span> | </span>${item.release_date.slice(0, 4)}</p>
-          <button class="btn-vote">${item.vote_count}</button>
+          <div class="alt__img">
+         <p class="other__gallery">${item.genres
+           .map(genre => genre.name)
+           .join(', ')}<span> | </span>${item.release_date.slice(0, 4)}
+          <button class="btn-vote">${item.vote_average.toFixed(1)}</button></p>
+          </div>
 		  </a>
         </li>`;
   return markup;
