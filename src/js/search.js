@@ -15,6 +15,10 @@ function onSubmit(evt) {
   trendingMovies
     .searchMovies(input, startPage)
     .then(({ results, total_results }) => {
+      if (results.length === 0) {
+        refs.errorMes.classList.remove("visually-hidden");
+        hidePreloader();        
+        return}
       const markup = createIndexMarkup(results);
       console.log(results);
       refs.listFilm.innerHTML = '';
