@@ -49,4 +49,7 @@ function handlWatched(key) {
 function createMarkup(cards, markupFunc) {
   return cards.reduce((acc, card) => acc + markupFunc(card), '');
 }
+
+export { handlWatched };
+
 // ------------------------------------------------------------------
