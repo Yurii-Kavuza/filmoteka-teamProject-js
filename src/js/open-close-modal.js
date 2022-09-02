@@ -139,7 +139,7 @@ function createModalMarkup(item) {
                             </tr>
                             <tr>
                                 <td class="film__info">Original Title</td>
-                                <td class="film__original">${
+                                <td class="film__value film__original">${
                                   item.original_title
                                 }</td>
                             </tr>
