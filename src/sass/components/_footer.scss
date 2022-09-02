@@ -95,6 +95,7 @@ body.lock {
     overflow-x: hidden;
     //animation
     transition: all 0.8s ease 0s;
+    z-index: 10000;
 }
 //псевдокласс target 
 // .popup:target {
