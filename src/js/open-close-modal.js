@@ -11,17 +11,10 @@ const trendingMovies2 = new TrendingMovies();
 
 gallery.addEventListener('click', clickOnMovie);
 
-// function onModalOpen() {
-//   window.addEventListener('keydown', onEscKeyPress);
-//   closeModalButton.addEventListener('click', onModalClose);
-//   modalBackdrop.addEventListener('click', onBackdropClick);
-//   document.body.classList.add('show-modal');
-// }
 function onModalClose() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-modal');
   document.body.style.overflow = 'auto';
-  // document.body.classList.remove('lock');
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
@@ -56,23 +49,19 @@ function clickOnMovie(e) {
     const onLibraryWatchedBtn = document.querySelector('.library_watched');
     const onLibraryQueueBtn = document.querySelector('.library_queue');
 
-    // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
     addWatchedBtn.addEventListener('click', e => {
       handlWatch();
       addToStorage('watchedList', res);
-      onLibraryWatchedBtn.click();
+      if (onLibraryQueueBtn != null) {
+        onLibraryQueueBtn.click();
+      }
     });
     addQueueBtn.addEventListener('click', e => {
       handlQueue();
       addToStorage('queueList', res);
-      onLibraryQueueBtn.click();
-      // console.log(e.target.textContent);
-      // console.log(e.target.dataset.id);
-      // console.log(getStorage('queueList'));
-      // console.log(isInStorage('queueList', id));
-
-      // e.target.textContent = `${renderListButton('queueList', id)}queue`;
-      // console.log(`${renderListButton('queueList', id)}queue`);
+      if (onLibraryQueueBtn != null) {
+        onLibraryQueueBtn.click();
+      }
     });
     // ------------------------handlBtnS--------------------------
 
