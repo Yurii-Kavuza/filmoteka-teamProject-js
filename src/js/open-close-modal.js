@@ -129,7 +129,7 @@ function createModalMarkup(item) {
                     <div class="grid-container">
                         <table>
                             <tr>
-                                <td class="film__info">Vote / Votes</td>
+                                <td class="film__info">Vote/Votes</td>
                                 <td class="film__value">
                                 <span class="film__vote film__vote--orange">${item.vote_average.toFixed(
     1
