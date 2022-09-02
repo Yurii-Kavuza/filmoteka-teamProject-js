@@ -18,17 +18,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // position: relative;
+    flex-direction: column;
     font-size: 25px;
     font-weight: 700;
     color: var(--active-text-color);
+
+    @media screen and (min-width: 768px) {
+        flex-direction: inherit;
+    }
+
     
 }
 
 .team-group {
-margin-right: 15px;
+// margin-right: 15px;
+@media screen and (min-width: 768px) {
+    margin-right: 15px;
+}
 }
 
+.team-number {
+    color: rgba(0, 0, 255, 0.759);
+}
 
 .team__people {
     position: relative;
