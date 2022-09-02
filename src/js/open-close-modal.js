@@ -52,16 +52,22 @@ function clickOnMovie(e) {
     // btn---------------------------------------------------
     const addQueueBtn = document.querySelector('.btnQueueModal');
     const addWatchedBtn = document.querySelector('.btnWatchedModal');
+
+    const onLibraryWatchedBtn = document.querySelector('.library_watched');
+    const onLibraryQueueBtn = document.querySelector('.library_queue');
+
+
     // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
     addWatchedBtn.addEventListener('click', e => {
       handlWatch();
-      addToStorage('watchedList', res)
+      addToStorage('watchedList', res);
+      onLibraryWatchedBtn.click();
     }
     );
     addQueueBtn.addEventListener('click', e => {
       handlQueue();
       addToStorage('queueList', res);
-
+      onLibraryQueueBtn.click();
       // console.log(e.target.textContent);
       // console.log(e.target.dataset.id);
       // console.log(getStorage('queueList'));

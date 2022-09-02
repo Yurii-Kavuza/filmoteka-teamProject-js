@@ -24,23 +24,13 @@ function handlWatched(key) {
     listFilm.innerHTML = '';
     console.log('error: нічого не добавлено ');
     // нужно добавить оповещение о пустом
+
   } else {
     //---- рендер разметки-------------
 
-    // console.log(newGalleryList);
-    // const array = newGalleryList.map(item => {
-    //   console.log(item);
-    //   headMarkup({ ...item });
-    // });
-
-    // headMarkup({...newGalleryList});
-    // debugger
-    // galleryLibr.innerHTML = '';
-    // galleryLibr.insertAdjacentHTML('beforeend', array);
-    // console.log('ответ для рендера', newGalleryList);
     const markup = createMarkup(newGalleryList, watchedMarkup);
+
     listFilm.innerHTML = '';
-    // listFilm.innerHTML(markup);
     listFilm.insertAdjacentHTML('beforeend', markup);
   }
 }
