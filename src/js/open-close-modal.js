@@ -56,14 +56,12 @@ function clickOnMovie(e) {
     const onLibraryWatchedBtn = document.querySelector('.library_watched');
     const onLibraryQueueBtn = document.querySelector('.library_queue');
 
-
     // addQueueBtn.addEventListener('click', () => addToStorage('queueList', res));
     addWatchedBtn.addEventListener('click', e => {
       handlWatch();
       addToStorage('watchedList', res);
       onLibraryWatchedBtn.click();
-    }
-    );
+    });
     addQueueBtn.addEventListener('click', e => {
       handlQueue();
       addToStorage('queueList', res);
@@ -75,33 +73,28 @@ function clickOnMovie(e) {
 
       // e.target.textContent = `${renderListButton('queueList', id)}queue`;
       // console.log(`${renderListButton('queueList', id)}queue`);
-    }
-
-    );
+    });
     // ------------------------handlBtnS--------------------------
 
     function handlQueue() {
-      if (addQueueBtn.textContent === "Add to queue") {
-        addQueueBtn.textContent = "Remove from queue";
+      if (addQueueBtn.textContent === 'Add to queue') {
+        addQueueBtn.textContent = 'Remove from queue';
       } else {
-        addQueueBtn.textContent = "Add to queue";
+        addQueueBtn.textContent = 'Add to queue';
       }
     }
     function handlWatch() {
-      if (addWatchedBtn.textContent === "Add to watched") {
-        addWatchedBtn.textContent = "Remove from watched";
+      if (addWatchedBtn.textContent === 'Add to watched') {
+        addWatchedBtn.textContent = 'Remove from watched';
       } else {
-        addWatchedBtn.textContent = "Add to watched";
+        addWatchedBtn.textContent = 'Add to watched';
       }
     }
     // ==============================================================
-
   });
 }
 
-
 function renderListButton(listName, id) {
-
   if (isInStorage(listName, id)) {
     return 'Remove from ';
   } else {
@@ -129,11 +122,11 @@ function createModalMarkup(item) {
                     <div class="grid-container">
                         <table>
                             <tr>
-                                <td class="film__info">Vote/Votes</td>
+                                <td class="film__info">Vote / Votes</td>
                                 <td class="film__value">
                                 <span class="film__vote film__vote--orange">${item.vote_average.toFixed(
-    1
-  )}</span>
+                                  1
+                                )}</span>
         <span>/</span>
         <span film__vote film__vote--orange>${item.vote_count}</span>
         </td>
@@ -141,19 +134,20 @@ function createModalMarkup(item) {
                             <tr>
                                 <td class="film__info">Popularity</td>
                                 <td class="film__value">${item.popularity.toFixed(
-    1
-  )}</td>
+                                  1
+                                )}</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Original Title</td>
-                                <td class="film__original">${item.original_title
-    }</td>
+                                <td class="film__original">${
+                                  item.original_title
+                                }</td>
                             </tr>
                             <tr>
                                 <td class="film__info">Genre</td>
                                 <td class="film__value">${item.genres
-      .map(genre => genre.name)
-      .join(', ')}</td>
+                                  .map(genre => genre.name)
+                                  .join(', ')}</td>
                             </tr>
                         </table>
                     </div>
@@ -162,16 +156,18 @@ function createModalMarkup(item) {
                     <p class="film__overview">${item.overview}</p>
 
                     <div class="modal__buttons">
-                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${item.id
-    }" data-list="watchedList">${renderListButton(
-      'watchedList',
-      item.id
-    )}watched</button>
-                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${item.id
-    }" data-list="queueList">${renderListButton(
-      'queueList',
-      item.id
-    )}queue</button>
+                        <button type="button" class="film__button btn__watch btnWatchedModal" data-id="${
+                          item.id
+                        }" data-list="watchedList">${renderListButton(
+    'watchedList',
+    item.id
+  )}watched</button>
+                        <button type="button" class="film__button btn__queue btnQueueModal" data-id="${
+                          item.id
+                        }" data-list="queueList">${renderListButton(
+    'queueList',
+    item.id
+  )}queue</button>
                     </div>
 
                 </div>
