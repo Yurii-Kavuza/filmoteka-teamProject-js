@@ -52,8 +52,8 @@ function clickOnMovie(e) {
     addWatchedBtn.addEventListener('click', e => {
       handlWatch();
       addToStorage('watchedList', res);
-      if (onLibraryQueueBtn != null) {
-        onLibraryQueueBtn.click();
+      if (onLibraryWatchedBtn != null) {
+        onLibraryWatchedBtn.click();
       }
     });
     addQueueBtn.addEventListener('click', e => {
