@@ -2,20 +2,20 @@
   "name": "filmoteka-teamProject-js",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://filatov44.github.io/filmoteka-teamProject-js/",
+  "homepage": "https://Yurii-Kavuza.github.io/filmoteka-teamProject-js/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /filmoteka-teamProject-js/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Filatov44/filmoteka-teamProject-js"
+    "url": "git+https://github.com/Yurii-Kavuza/filmoteka-teamProject-js"
   },
   "keywords": [],
-  "author": "Sergey Filatov <filatov300@gmail.com>",
+  "author": "Yurii Kavuza <kavuzaiurii@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Filatov44/filmoteka-teamProject-js/issues"
+    "url": "https://github.com/Yurii-Kavuza/filmoteka-teamProject-js/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
